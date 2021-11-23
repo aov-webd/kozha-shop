@@ -111,6 +111,8 @@ input {
 }
 
 .drawer {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     width: 420px;
     height: 100%;
@@ -122,22 +124,18 @@ input {
     display: flex;
     flex-direction: column;
 
+    .items {
+        flex: 1;
+        overflow: auto;
+        margin-bottom: 40px;
+    }
+
     h2 {
         margin: 0;
-        font-size: 24px;
     }
 }
 
 .cartTotalBlock {
-    .greenButton {
-        position: relative;
-        img {
-            position: absolute;
-            right: 30px;
-            top: 20px;
-        }
-    }
-
     ul {
 
         margin-bottom: 40px !important;
@@ -154,6 +152,23 @@ input {
                 top: -3px;
                 margin: 0 7px;
             }
+        }
+    }
+
+    .greenButton {
+        position: relative;
+
+        &:hover {
+            img {
+                transform: translateX(5px);
+            }
+        }
+
+        img {
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            transition: transform 0.15 s ease-in-out;
         }
     }
 }
