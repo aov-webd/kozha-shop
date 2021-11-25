@@ -1,43 +1,28 @@
-function Drawer() {
+function Drawer({onClickClose, items = []}) {
     return (
-        <div  className="overlay">
+        <div className="overlay">
             <div className="drawer">
-                <h2 className="d-flex justify-between mb-20">Корзина <img className="removeBtn cu-p" src="/img/btn-remove.svg" alt="Remove" /></h2>
+                <h2 className="d-flex justify-between mb-20">Корзина
+                    <img onClick={onClickClose} className="removeBtn cu-p" src="/img/btn-remove.svg" alt="Remove" />
+                </h2>
 
                 <div className="items">
-                    <div className="cartItem mb-20 d-flex align-center">
-                        <div
-                            style={{backgroundImage: 'url(/img/items/1.jpg)'}}
-                            className="cartItemImg">
-                        </div>
-                        <div className="mr-20 flex">
-                            <p className="mb-5">Кожаная сумка ручной работы</p>
-                            <b>12 999 руб.</b>
-                        </div>
-                        <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
-                    </div>
-                    <div className="cartItem mb-20 d-flex align-center">
-                        <div
-                            style={{backgroundImage: 'url(/img/items/1.jpg)'}}
-                            className="cartItemImg">
-                        </div>
-                        <div className="mr-20 flex">
-                            <p className="mb-5">Кожаная сумка ручной работы</p>
-                            <b>12 999 руб.</b>
-                        </div>
-                        <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
-                    </div>
-                    <div className="cartItem mb-20 d-flex align-center">
-                        <div
-                            style={{backgroundImage: 'url(/img/items/1.jpg)'}}
-                            className="cartItemImg">
-                        </div>
-                        <div className="mr-20 flex">
-                            <p className="mb-5">Кожаная сумка ручной работы</p>
-                            <b>12 999 руб.</b>
-                        </div>
-                        <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
-                    </div>
+                    {items.map((obj) => {
+                        // console.log(obj);
+                        return (
+                            <div className="cartItem mb-20 d-flex align-center">
+                                <div
+                                    style={{backgroundImage: `url(${obj.imgUrl})`}}
+                                    className="cartItemImg">
+                                </div>
+                                <div className="mr-20 flex">
+                                    <p className="mb-5">Кожаная сумка ручной работы</p>
+                                    <b>{obj.price} руб`.</b>
+                                </div>
+                                <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" />
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className="cartTotalBlock">
                     <ul>
