@@ -1,0 +1,154 @@
+[
+    {
+        "id": "1",
+        "cart": "true",
+        "favorite": "false",
+        "name": "Кожаный ремень ручной работы",
+        "price": "12999",
+        "imgUrl": "/img/items/1.jpg"
+    },
+    {
+        "id": "2",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаная сумка ручной работы",
+        "price": "15600",
+        "imgUrl": "/img/items/2.jpg"
+    },
+    {
+        "id": "3",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "8999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "4",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "8999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "5",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "7999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "6",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "6999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "7",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "8",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "9",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "10",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "11",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "12",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "13",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "14",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "15",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "16",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "17",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "18",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    },
+    {
+        "id": "19",
+        "cart": "false",
+        "favorite": "false",
+        "name": "Кожаный кошелек ручной работы",
+        "price": "5999",
+        "imgUrl": "/img/items/3.jpg"
+    }
+]
