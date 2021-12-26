@@ -1,40 +1,23 @@
 // @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@100;500&display=swap');
 
 body {
-  margin: 0;
-  font-family: 'Inter', system-ui;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-//   background-color: #e7f6ff;
+    margin                 : 0;
+    font-family            : "Inter", system-ui;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    //   background-color: #e7f6ff;
 }
 
 * {
-    font-family: 'Inter', system-ui;
+    font-family: "Inter", system-ui;
 }
 
 .wrapper {
-    background: #ffffff;
+    background      : #ffffff;
     // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
     // border-radius: 20px;
-    max-width: 1900px;
-    margin: auto;
-}
-
-header {
-    background: #ffffff;
-    border-bottom: 1px solid #eaeaea;
-
-    img {
-        // margin-right: 15px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        }
-
-    h3,
-    p {
-        margin: 0;
-    }
+    max-width       : 1440px;
+    margin          : auto;
 }
 
 .content {
@@ -45,9 +28,9 @@ header {
 
 .button {
     box-sizing: border-box;
-    height: 32px;
-    width: 32px;
-    opacity: 0.7;
+    height    : 32px;
+    width     : 32px;
+    opacity   : 0.7;
 
     &:hover {
         opacity: 1;
@@ -55,56 +38,56 @@ header {
 }
 
 .search-block {
-    border: 1px solid #f3f3f3;
+    border       : 1px solid #f3f3f3;
     border-radius: 10px;
-    padding: 0 15px;
-    position: relative;
+    padding      : 0 15px;
+    position     : relative;
     // box-sizing: border-box;
 
     .clear {
         position: absolute;
-        right: 0;
-        width: 18px;
-        height: 18px;
-        top: 14px;
-        right: 12px;
+        right   : 0;
+        width   : 18px;
+        height  : 18px;
+        top     : 14px;
+        right   : 12px;
     }
 }
 
 input {
-    border: 0;
-    padding: 13px;
+    border   : 0;
+    padding  : 13px;
     font-size: 16px;
-    width: 200px;
+    width    : 200px;
 }
 
 .overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1;
+    position        : absolute;
+    left            : 0;
+    top             : 0;
+    width           : 100%;
+    height          : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index         : 1;
 }
 
 .drawer {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    position: absolute;
-    width: 420px;
-    height: 100%;
-    right: 0;
-    background: #ffffff;
-    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    position      : absolute;
+    width         : 420px;
+    height        : 100%;
+    right         : 0;
+    background    : #ffffff;
+    box-shadow    : -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding       : 30px;
 
-    display: flex;
+    display       : flex;
     flex-direction: column;
 
     .items {
-        flex: 1;
-        overflow: auto;
+        flex         : 1;
+        overflow     : auto;
         margin-bottom: 40px;
     }
 
@@ -115,20 +98,19 @@ input {
 
 .cartTotalBlock {
     ul {
-
         margin-bottom: 40px !important;
 
         li {
-            display: flex;
+            display    : flex;
             align-items: flex-end;
 
             div {
-                flex: 1;
-                height: 1px;
-                border: 1px dashed #f2f2f2;
+                flex    : 1;
+                height  : 1px;
+                border  : 1px dashed #f2f2f2;
                 position: relative;
-                top: -3px;
-                margin: 0 7px;
+                top     : -3px;
+                margin  : 0 7px;
             }
         }
     }
@@ -143,25 +125,25 @@ input {
         }
 
         img {
-            position: absolute;
-            right: 40px;
-            top: 20px;
+            position  : absolute;
+            right     : 40px;
+            top       : 20px;
             transition: transform 0.15 s ease-in-out;
         }
     }
 }
 
 .greenButton {
-    width: 100%;
-    height: 55px;
-    background: #9DD558;
+    width        : 100%;
+    height       : 55px;
+    background   : #9dd558;
     border-radius: 18px;
-    border: 0;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.1s ease-in-out;
+    border       : 0;
+    color        : #fff;
+    font-size    : 16px;
+    font-weight  : 500;
+    cursor       : pointer;
+    transition   : background 0.1s ease-in-out;
 
     &:hover {
         background: lighten(#9dd558, 5%);
@@ -173,22 +155,22 @@ input {
 }
 
 .cartItem {
-    border: 1px solid #f3f3f3;
+    border       : 1px solid #f3f3f3;
     border-radius: 20px;
-    overflow: hidden;
-    padding: 20px;
+    overflow     : hidden;
+    padding      : 20px;
 
     .cartItemImg {
-        height: 70px;
-        width:70px;
-        background-size: contain;
+        height           : 70px;
+        width            : 70px;
+        background-size  : contain;
         background-repeat: no-repeat;
-        margin-right: 20px;
+        margin-right     : 20px;
     }
 
     p {
         font-size: 14px;
-        margin: 0;
+        margin   : 0;
     }
 
     b {
@@ -196,7 +178,7 @@ input {
     }
 
     .removeBtn {
-        opacity: 0.5;
+        opacity   : 0.5;
         transition: opacity 0.1s ease-in-out;
 
         &:hover {

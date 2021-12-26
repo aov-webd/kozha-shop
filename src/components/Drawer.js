@@ -1,27 +1,31 @@
-function Drawer({
-    cartOpened,
-    onClickClose,
-    onRemove,
-    items = []
-}) {
-    // console.log('drawer rerendered')
-    // console.log(items)
+import React from 'react';
+import { AppContext } from '../App'
+
+function Drawer() {
+
+    const {
+        cartOpened,
+        items,
+        setCartOpened,
+        updField
+    } = React.useContext(AppContext);
+
     let total = items.reduce((prev, item) => prev + (item.cart === 'true' && +item.price), 0);
     return cartOpened && (
         <div className="overlay">
             <div className="drawer">
                 <h2 className="d-flex justify-between mb-20">Корзина
-                    <img onClick={onClickClose} className="removeBtn cu-p" src="/img/btn-remove.svg" alt="Remove" />
+                    <img onClick={() => setCartOpened(false)} className="removeBtn cu-p" src="/img/btn-remove.svg" alt="Remove" />
                 </h2>
 
-                {(items.length > 0)? (
+                {(items.length > 0) ? (
                     <div>
                         <div className="items">
                             {items.filter((item) => item.cart === 'true').map((obj) => {
                                 return (
                                     <div className="cartItem mb-20 d-flex align-center">
                                         <div
-                                            style={{backgroundImage: `url(${obj.imgUrl})`}}
+                                            style={{ backgroundImage: `url(${obj.imgUrl})` }}
                                             className="cartItemImg">
                                         </div>
                                         <div className="mr-20 flex">
@@ -29,7 +33,7 @@ function Drawer({
                                             <b>{obj.price} руб.</b>
                                         </div>
                                         <img
-                                            onClick={() => onRemove(obj.id, {'cart':'false'})}
+                                            onClick={() => updField(obj.id, { 'cart': 'false' })}
                                             className="removeBtn"
                                             src="/img/btn-remove.svg"
                                             alt="Remove"
@@ -48,7 +52,7 @@ function Drawer({
                                 <li className="d-flex">
                                     <span>НДС 20%:</span>
                                     <div></div>
-                                    <b>{(total*0.2).toFixed(2)}</b>
+                                    <b>{(total * 0.2).toFixed(2)}</b>
                                 </li>
                             </ul>
                             <button className="greenButton">Оформить заказ<img src="/img/arrow.svg" alt="Arrow" /></button>
