@@ -27,19 +27,19 @@ function Landing() {
             </div>
             <div className={styles.featuresContainer}>
                 <div>
-                    <img src="./img/landing/1.jpg" alt="" />
+                    <div className={styles.squareImage}><img src="./img/landing/1.jpg" alt="" /></div>
                     <div className={styles.feature}>Доставка по всей России и странам СНГ Почтой России и транспортной компанией СДЭК.</div>
                 </div>
                 <div>
-                    <img src="./img/landing/2.jpg" alt="" />
+                    <div className={styles.squareImage}><img src="./img/landing/2.jpg" alt="" /></div>
                     <div className={styles.feature}>Оплата производится онлайн. Заказ изделий по предоплате.</div>
                 </div>
                 <div>
-                    <img src="./img/landing/3.jpg" alt="" />
+                    <div className={styles.squareImage}><img src="./img/landing/3.jpg" alt="" /></div>
                     <div className={styles.feature}>Срок изготовления. От 2-х дней.</div>
                 </div>
                 <div>
-                    <img src="./img/landing/4.jpg" alt="" />
+                    <div className={styles.squareImage}><img src="./img/landing/4.jpg" alt="" /></div>
                     <div className={styles.feature}>Нанесение лазерной гравировки в ПОДАРОК!</div>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@100;500&family=Open+Sans:wght@400;600;700&display=swap');
+
 .footerLine {
     height          : 2px;
     margin-top      : 20px;
@@ -5,12 +7,14 @@
 }
 
 .footerContainer {
+    font-family          : 'Open Sans', sans-serif;
     margin-top           : 20px;
-    padding              : 0 100px;
+    padding              : 0 10%;
     background-color     : #fff;
     display              : grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap           : 100px;
+    font-size            : clamp(0rem, 1.7vw, 1.4rem);
 }
 
 .contacts {
@@ -22,18 +26,20 @@
 
 .footerSocials {
 
-    ul {
+    a {
+        vertical-align: middle;
         // float  : right;
         // display: flex;
     }
 
     img {
-        cursor      : pointer;
-        height      : 20px;
-        width       : 20px;
-        margin-right: 20px;
-        opacity     : 0.7;
-        transition  : all 0.3s;
+        vertical-align: middle;
+        cursor        : pointer;
+        height        : 20px;
+        width         : 20px;
+        margin-right  : 20px;
+        opacity       : 0.7;
+        transition    : all 0.3s;
 
         &:hover {
             opacity: 1;
