@@ -1,67 +1,65 @@
-    .headerLine {
-        height          : 2px;
-        margin          : 20px 0;
-        background-color: rgb(134, 134, 134);
-    }
+.headerLine {
+    height          : 2px;
+    margin-bottom   : 20px;
+    background-color: rgb(134, 134, 134);
+}
 
-    .navbarContainer {
-        // position          : fixed;
-        max-width               : 1440px;
-        display                 : flex;
-        // justify-content: space-between;
-        background              : #ffffff;
-        // border-bottom        : 1px solid #eaeaea;
-        // opacity           : 80%;
-        align-items             : center;
-    }
+.navbarContainer {
+    max-width               : 1440px;
+    display                 : grid;
+    grid-template-columns   : 1fr 1fr 1fr;
+    // background           : #ffffff;
+    align-items             : center;
+}
 
-    .navbarLeft {
-        width         : 25%;
-        display       : flex;
-        text-transform: uppercase;
+.navbarLeft {
+    display       : flex;
+    width         : 100%;
+    text-transform: uppercase;
 
-        li {
-            color      : #000;
-            font-weight: bold;
-            cursor     : pointer;
-            margin-left: 40px;
-            transition : all 0.3s;
+    li {
+        color      : #000;
+        font-weight: bold;
+        cursor     : pointer;
+        margin-left: 20px;
+        transition : all 0.3s;
 
-            &:hover {
-                color: rgb(195, 0, 0);
-            }
-        }
-
-    }
-
-    .navbarCenter {
-        // height: 100px;
-        margin: 10px auto;
-
-        img {
-            width: 200px;
+        &:hover {
+            color: rgb(195, 0, 0);
         }
     }
 
-    .navbarRight {
-        width: 25%;
+}
+
+.navbarCenter {
+    width: 100%;
+
+    img {
+        margin  : 3% auto;
+        padding : 0 30%;
+        // width: 30%;
+    }
+}
+
+.navbarRight {
+    width: 100%;
 
 
-        ul {
-            float  : right;
-            display: flex;
-        }
+    ul {
+        float  : right;
+        display: flex;
+    }
 
-        img {
-            cursor      : pointer;
-            height      : 20px;
-            width       : 20px;
-            margin-right: 20px;
-            opacity     : 0.7;
-            transition  : all 0.3s;
+    img {
+        cursor      : pointer;
+        height      : 20px;
+        width       : 20px;
+        margin-right: 20px;
+        opacity     : 0.7;
+        transition  : all 0.3s;
 
-            &:hover {
-                opacity: 1;
-            }
+        &:hover {
+            opacity: 1;
         }
     }
+}

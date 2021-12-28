@@ -51,9 +51,10 @@ function Caroucel() {
                                 styles.caroucelImg + ' ' +
                                 (index === activeIndex ? '' : styles.invisibleImg)}
                             src={item} alt={index} />
-                        <p className={
-                            styles.caroucelText + ' ' +
-                            (index === activeIndex ? '' : styles.invisibleText)}>{itemText[index]}</p>
+                        <p
+                            className={
+                                styles.caroucelText + ' ' +
+                                (index === activeIndex ? '' : styles.invisibleText)}>{itemText[index]}</p>
                     </div>
                 ))}
                 <div

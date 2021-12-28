@@ -9,7 +9,7 @@ function Landing() {
             <Caroucel />
             <div className={styles.boxB}>
                 <div className={styles.boxBLeft}>
-                    <img src="./img/abdulov.jpg" alt="" />
+                    <img src="./img/abdulin.jpg" alt="" />
                 </div>
                 <div className={styles.boxBRight}>
                     <p>Всем привет, меня зовут Абдулин Иван, я кожевенник!
@@ -27,19 +27,19 @@ function Landing() {
             </div>
             <div className={styles.featuresContainer}>
                 <div>
-                    <img src="./img/gallery/belt-male/1.jpg" alt="" />
+                    <img src="./img/landing/1.jpg" alt="" />
                     <div className={styles.feature}>Доставка по всей России и странам СНГ Почтой России и транспортной компанией СДЭК.</div>
                 </div>
                 <div>
-                    <img src="./img/gallery/passport/1.jpg" alt="" />
+                    <img src="./img/landing/2.jpg" alt="" />
                     <div className={styles.feature}>Оплата производится онлайн. Заказ изделий по предоплате.</div>
                 </div>
                 <div>
-                    <img src="./img/gallery/cardholder/1.jpg" alt="" />
+                    <img src="./img/landing/3.jpg" alt="" />
                     <div className={styles.feature}>Срок изготовления. От 2-х дней.</div>
                 </div>
                 <div>
-                    <img src="./img/gallery/charm/3.jpg" alt="" />
+                    <img src="./img/landing/4.jpg" alt="" />
                     <div className={styles.feature}>Нанесение лазерной гравировки в ПОДАРОК!</div>
                 </div>
             </div>

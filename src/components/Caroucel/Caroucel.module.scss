@@ -1,30 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 .caroucel {
-    max-width  : 1440px;
-    padding-top: 50%;
-    box-sizing : border-box;
-    overflow   : hidden;
-    position   : relative;
+    max-width   : 1440px;
+    box-sizing  : border-box;
+    overflow    : hidden;
+    position    : relative;
+    aspect-ratio: 2/1;
 
     .invisibleImg {
         opacity: 0;
     }
 
-
-
     .caroucelImg {
-        position  : absolute;
-        top       : -50%;
-        width     : 100%;
-        height    : 200%;
-        transition: all 0.5s;
+        aspect-ratio: 2/1;
+        position    : absolute;
+        top         : -50%;
+        width       : 100%;
+        height      : 200%;
+        transition  : all 0.5s;
     }
 
     .caroucelText {
-        margin     : 50px;
+        margin     : 5%;
         font-family: 'Rubik';
-        font-size  : 50px;
+        font-size  : clamp(0rem, 3vw, 3rem);
         font-weight: 500;
         color      : #fff;
         text-shadow: 1px 0 5px #333;
