@@ -1,91 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import { AppContext } from '../../App'
 import styles from './Landing.module.scss';
+import Caroucel from "../Caroucel/Caroucel";
 
 function Landing() {
-    const itemLink = "./img/caroucel/1.jpg"
-
-    // const {
-    //     searchValue,
-    //     setSearchValue,
-    //     onChangeSearchInput,
-    //     isLoading
-    // } = React.useContext(AppContext);
-
-    const caroucelItems = [
-        "./img/caroucel/1.jpg",
-        "./img/caroucel/2.jpg",
-        "./img/caroucel/3.jpg",
-        "./img/caroucel/4.jpg",
-        "./img/caroucel/5.jpg",
-        "./img/caroucel/6.jpg",
-        "./img/caroucel/7.jpg",
-        "./img/caroucel/8.jpg"
-    ];
-
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [showCaroucelNavigation, setShowCaroucelNavigation] = useState(false)
-
-    let incActiveIndex = () => { setActiveIndex(activeIndex === 7 ? 0 : activeIndex + 1) }
-    let decActiveIndex = () => { setActiveIndex(activeIndex === 0 ? 7 : activeIndex - 1) }
-
-    useEffect(() => {
-        let interval = setInterval(() => {
-            incActiveIndex();
-        }, 10000);
-        return () => clearInterval(interval)
-    }, [activeIndex])
-
     return (
-        <div
-            onMouseEnter={() => setShowCaroucelNavigation(true)}
-            onMouseLeave={() => setShowCaroucelNavigation(false)}
-        >
-            <section className={styles.caroucel}>
-                {caroucelItems.map((item, index) => (
-                    <img
-                        key={index}
-                        className={
-                            styles.caroucelImg + ' ' +
-                            (index === activeIndex ? '' : styles.invisible)}
-                        src={item} alt={index} />
-                ))}
-                <div
-                    className={(showCaroucelNavigation ? styles.showCaroucelNavigation : '') + ' ' + styles.dots}>
-                    {caroucelItems.map((item, index) => (
-                        <div
-                            key={index}
-                            onClick={() => setActiveIndex(index)}
-                            className={index === activeIndex ? styles.activeDot : styles.inActiveDot}></div>
-                    ))}
+        <div>
+            <Caroucel />
+            <div className={styles.boxA}>
+                <div className={styles.boxALeft}>
+                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
                 </div>
-                <div
-                    className={
-                        styles.caroucelArrowsContainer + ' ' +
-                        (showCaroucelNavigation ? styles.showCaroucelNavigation : '')
-                    }
-                >
-                    <img
-                        onClick={decActiveIndex}
-                        className={styles.caroucelArrow + ' ' + styles.arrowLeft}
-                        src="./img/arrow-right.svg" alt="arrow" />
+                <div className={styles.boxARight}>
+                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
                 </div>
-                <div
-                    className={
-                        (showCaroucelNavigation ? styles.showCaroucelNavigation : '') + ' ' +
-                        styles.caroucelArrowsContainerRight + ' ' +
-                        styles.caroucelArrowsContainer
-                    }
-                >
-                    <img
-                        onClick={incActiveIndex}
-                        className={styles.caroucelArrow + ' ' + styles.arrowRight}
-                        src="./img/arrow-right.svg" alt="arrow" />
+            </div>
+            <div className={styles.boxB}>
+                <div className={styles.boxBLeft}>
+                    <img src="./img/abdulov.jpg" alt="" />
                 </div>
-            </section>
+                <div className={styles.boxBRight}>
+                    <p>Всем привет, меня зовут Абдулин Иван, я кожевенник!
+                        Долгое время занимаюсь изготовлением различных изделий из натуральной кожи. Здесь вы сможете подобрать  для себя, своих близких, родных и друзей различные аксессуары из кожи, выполненные по вашим фантазиям и изготовленные вручную с пожизненной гарантией.
+                        У меня для вас:
+                    </p>
+                    <ul>
+                        <li>первосортная кожа,</li>
+                        <li>прочные материалы</li>
+                        <li>первоклассная фурнитура</li>
+                        <li>а также максимальная отдача к каждому заказу.</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div className={styles.capabilitiesContainer}>
+                <div>
+                    <p>Доставка по всей России и странам СНГ Почтой России и транспортной компанией СДЭК.</p>
+                </div>
+                <div>
+                    <p>Оплата производится онлайн. Заказ изделий по предоплате.</p>
+                </div>
+                <div>
+                    <p>Срок изготовления. От 2-х дней.</p>
+                </div>
+                <div>
+                    <p>Нанесение лазерной гравировки в ПОДАРОК!</p>
+                </div>
+            </div>
+            <footer>
+                <div className={styles.footerGeneral}></div>
+            </footer>
         </div>
+
     )
 }
 
 export default Landing;
-;

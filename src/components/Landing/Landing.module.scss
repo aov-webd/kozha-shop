@@ -1,88 +1,76 @@
-.caroucel {
-    max-width  : 1440px;
-    padding-top: 50%;
-    box-sizing : border-box;
-    overflow   : hidden;
-    position   : relative;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
-    .invisible {
-        opacity: 0;
+.boxA {
+    margin-top: 20px;
+    display   : flex;
+
+    .boxALeft {
+        margin-right: 10px;
+        width       : 50%;
+
+        img {
+            width: 100%;
+        }
     }
 
-    .caroucelImg {
-        position  : absolute;
-        top       : -50%;
-        width     : 100%;
-        height    : 200%;
-        transition: all 0.5s;
-    }
-}
+    .boxARight {
+        margin-left: 10px;
+        width      : 50%;
 
-.dots {
-    z-index     : 1;
-    position    : absolute;
-    bottom      : 0;
-    left        : 50%;
-    margin-right: auto;
-    margin-left : auto;
-    display     : flex;
-    transform   : translate(-50%, -50%);
-    opacity     : 0;
-    transition  : all 0.3s;
-
-    .activeDot {
-        opacity: 1;
-    }
-
-    .inActiveDot {
-        opacity: 0.3;
-    }
-
-    div {
-        cursor          : pointer;
-        transition      : all 0.3s;
-        margin          : 30px 5px;
-        width           : 30px;
-        height          : 15px;
-        background-color: rgb(133, 133, 133);
-    }
-
-}
-
-
-.caroucelArrowsContainer {
-    opacity   : 0;
-    z-index   : 1;
-    position  : absolute;
-    top       : 0;
-    height    : 100%;
-    width     : 100px;
-    transition: all 0.3s;
-
-    .caroucelArrow {
-        cursor          : pointer;
-        z-index         : 1;
-        position        : absolute;
-        top             : 50%;
-        background-color: rgb(133, 133, 133);
-        width           : 100px;
-        height          : 100px;
-        opacity         : 0.5;
-    }
-
-    .arrowRight {
-        transform: translateY(-50%) rotate(-90deg);
-    }
-
-    .arrowLeft {
-        transform: translateY(-50%) rotate(90deg);
+        img {
+            width: 100%;
+        }
     }
 }
 
-.caroucelArrowsContainerRight {
-    right: 0;
+.boxB {
+    margin-top         : 20px;
+    display            : flex;
+    background-color   : rgb(37, 37, 37);
+    // border-radius   : 30px;
+    overflow           : hidden;
+
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.36);
+
+    .boxBLeft {
+        width: 40%;
+
+        img {
+            z-index: 10;
+            width  : 100%;
+        }
+    }
+
+    .boxBRight {
+        width  : 70%;
+        color  : #fff;
+        padding: 40px;
+
+        p,
+        li {
+            list-style : inside;
+            font-family: 'Playfair Display';
+            font-size  : 25px;
+            font-weight: 200;
+        }
+    }
 }
 
-.showCaroucelNavigation {
-    opacity: 1;
+.capabilitiesContainer {
+    display                 : grid;
+    grid-template-columns   : 1fr 1fr 1fr 1fr;
+    // margin-top           : 20px;
+
+    p {
+        font-family: 'Rubik';
+        font-size  : 20px;
+        font-weight: 500;
+        text-align : center;
+        padding    : 100px 50px;
+    }
+
+    img {
+        width: 100%;
+    }
 }

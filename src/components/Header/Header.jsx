@@ -14,6 +14,9 @@ function Header(props) {
                 <li>
                     Галерея
                 </li>
+                <li>
+                    Выкройки
+                </li>
             </ul>
             <div className={styles.navbarCenter} >
                 <Link to='/'>
@@ -28,25 +31,21 @@ function Header(props) {
                         </Link>
                     </li>
                     <li>
-                        <img src="./img/social-facebook.svg" alt="facebook" />
+                        <a href="https://vk.com/abdulin_ekb">
+                            <img src="./img/social-vk.svg" alt="vk" />
+                        </a>
                     </li>
                     <li>
-                        <img src="./img/social-pinterest.svg" alt="pinterest" />
-                    </li>
-                    <li>
-                        <img src="./img/social-instagram.svg" alt="instagram" />
+                        <a href="https://www.instagram.com/ABDULIN_Ekb">
+                            <img src="./img/social-instagram.svg" alt="instagram" />
+                        </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw">
                             <img src="./img/social-youtube.svg" alt="youtube" />
                         </a>
-
-                    </li>
-                    <li>
-                        <img src="./img/social-twitter.svg" alt="twitter" />
                     </li>
                 </ul>
-
             </div>
         </header>
     )
