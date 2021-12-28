@@ -1,28 +1,24 @@
+import React, { useEffect, useState } from 'react';
+import styles from './Footer.module.scss';
 import { Link } from "react-router-dom";
-import styles from './Header.module.scss';
 
-function Header(props) {
+function Footer() {
     return (
         <div>
-            <header className={styles.navbarContainer}>
-                <ul className={styles.navbarLeft}>
-                    <li>
-                        Домой
-                    </li>
-                    <li>
-                        Каталог
-                    </li>
-                    <li>
-                        Галерея
-                    </li>
-                    <li>
-                        Выкройки
-                    </li>
-                </ul>
-                <div className={styles.navbarCenter} >
+            <div className={styles.footerLine}></div>
+            <div className={styles.footerContainer}>
+                <div className={styles.contacts}>
                     <Link to='/'>
                         <img className={styles.navbarCenter} src="/img/logo.png" alt="item" />
                     </Link>
+                    <p>Прием заказов с 10:00 до 20:00 МСК</p>
+                    <p>Базируемся в Екатеринбурге, улица Евгения Савкова 4</p>
+                    <p>ivan-abdulin@rambler.ru</p>
+                </div>
+                <div>
+                    <p>Телефон/WA:</p>
+                    <p> +7 (922) 111-24-90 - Иван</p>
+                    <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
                 <div className={styles.navbarRight}>
                     <ul>
@@ -48,11 +44,9 @@ function Header(props) {
                         </li>
                     </ul>
                 </div>
-            </header>
-            <div className={styles.headerLine}></div>
+            </div >
         </div>
-
     )
 }
 
-export default Header;
+export default Footer

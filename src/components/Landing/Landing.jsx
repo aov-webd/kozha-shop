@@ -2,19 +2,40 @@ import React, { useEffect, useState } from 'react';
 import { AppContext } from '../../App'
 import styles from './Landing.module.scss';
 import Caroucel from "../Caroucel/Caroucel";
-
+import Footer from "../Footer/Footer"
 function Landing() {
     return (
         <div>
             <Caroucel />
-            <div className={styles.boxA}>
+            {/* <div className={styles.boxA}>
                 <div className={styles.boxALeft}>
                     <img src="./img/gallery/wallet-f/8.jpg" alt="" />
                 </div>
                 <div className={styles.boxARight}>
                     <img src="./img/gallery/wallet-f/3.jpg" alt="" />
                 </div>
-            </div>
+                <div className={styles.boxALeft}>
+                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
+                </div>
+                <div className={styles.boxARight}>
+                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
+                </div>
+                <div className={styles.boxALeft}>
+                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
+                </div>
+                <div className={styles.boxARight}>
+                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
+                </div>
+                <div className={styles.boxALeft}>
+                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
+                </div>
+                <div className={styles.boxARight}>
+                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
+                </div>
+                <div className={styles.boxToCat}>
+                    <button></button>
+                </div>
+            </div> */}
             <div className={styles.boxB}>
                 <div className={styles.boxBLeft}>
                     <img src="./img/abdulov.jpg" alt="" />
@@ -47,9 +68,7 @@ function Landing() {
                     <p>Нанесение лазерной гравировки в ПОДАРОК!</p>
                 </div>
             </div>
-            <footer>
-                <div className={styles.footerGeneral}></div>
-            </footer>
+            <Footer />
         </div>
 
     )
