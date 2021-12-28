@@ -20,26 +20,26 @@ function Footer() {
                     <p> +7 (922) 111-24-90 - Иван</p>
                     <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
-                <div className={styles.navbarRight}>
+                <div className={styles.footerSocials}>
                     <ul>
                         <li>
                             <Link to="/favorites">
-                                <img src="/img/heart.svg" alt="user" />
+                                <img src="./img/heart.svg" alt="user" />Закладки
                             </Link>
                         </li>
                         <li>
                             <a href="https://vk.com/abdulin_ekb">
-                                <img src="./img/social-vk.svg" alt="vk" />
+                                <img src="./img/social-vk.svg" alt="vk" />ВКонтакте
                             </a>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/ABDULIN_Ekb">
-                                <img src="./img/social-instagram.svg" alt="instagram" />
+                                <img src="./img/social-instagram.svg" alt="instagram" />Инстаграм
                             </a>
                         </li>
                         <li>
                             <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw">
-                                <img src="./img/social-youtube.svg" alt="youtube" />
+                                <img src="./img/social-youtube.svg" alt="youtube" />Ютуб
                             </a>
                         </li>
                     </ul>

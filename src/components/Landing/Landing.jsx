@@ -7,35 +7,6 @@ function Landing() {
     return (
         <div>
             <Caroucel />
-            {/* <div className={styles.boxA}>
-                <div className={styles.boxALeft}>
-                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
-                </div>
-                <div className={styles.boxARight}>
-                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
-                </div>
-                <div className={styles.boxALeft}>
-                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
-                </div>
-                <div className={styles.boxARight}>
-                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
-                </div>
-                <div className={styles.boxALeft}>
-                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
-                </div>
-                <div className={styles.boxARight}>
-                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
-                </div>
-                <div className={styles.boxALeft}>
-                    <img src="./img/gallery/wallet-f/8.jpg" alt="" />
-                </div>
-                <div className={styles.boxARight}>
-                    <img src="./img/gallery/wallet-f/3.jpg" alt="" />
-                </div>
-                <div className={styles.boxToCat}>
-                    <button></button>
-                </div>
-            </div> */}
             <div className={styles.boxB}>
                 <div className={styles.boxBLeft}>
                     <img src="./img/abdulov.jpg" alt="" />
@@ -54,18 +25,22 @@ function Landing() {
 
                 </div>
             </div>
-            <div className={styles.capabilitiesContainer}>
+            <div className={styles.featuresContainer}>
                 <div>
-                    <p>Доставка по всей России и странам СНГ Почтой России и транспортной компанией СДЭК.</p>
+                    <img src="./img/gallery/belt-male/1.jpg" alt="" />
+                    <div className={styles.feature}>Доставка по всей России и странам СНГ Почтой России и транспортной компанией СДЭК.</div>
                 </div>
                 <div>
-                    <p>Оплата производится онлайн. Заказ изделий по предоплате.</p>
+                    <img src="./img/gallery/passport/1.jpg" alt="" />
+                    <div className={styles.feature}>Оплата производится онлайн. Заказ изделий по предоплате.</div>
                 </div>
                 <div>
-                    <p>Срок изготовления. От 2-х дней.</p>
+                    <img src="./img/gallery/cardholder/1.jpg" alt="" />
+                    <div className={styles.feature}>Срок изготовления. От 2-х дней.</div>
                 </div>
                 <div>
-                    <p>Нанесение лазерной гравировки в ПОДАРОК!</p>
+                    <img src="./img/gallery/charm/3.jpg" alt="" />
+                    <div className={styles.feature}>Нанесение лазерной гравировки в ПОДАРОК!</div>
                 </div>
             </div>
             <Footer />
