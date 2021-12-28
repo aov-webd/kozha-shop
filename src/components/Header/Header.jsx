@@ -7,7 +7,7 @@ function Header(props) {
             <header className={styles.navbarContainer}>
                 <ul className={styles.navbarLeft}>
                     <li>
-                        Домой
+                        Главная
                     </li>
                     <li>
                         Каталог

@@ -7,7 +7,7 @@ function Footer() {
         <div>
             <div className={styles.footerLine}></div>
             <div className={styles.footerContainer}>
-                <div className={styles.contacts}>
+                <div className={styles.contacts + ' ' + styles.footerCol}>
                     <Link to='/'>
                         <img className={styles.navbarCenter} src="/img/logo.png" alt="item" />
                     </Link>
@@ -15,37 +15,47 @@ function Footer() {
                     <p>Базируемся в Екатеринбурге, улица Евгения Савкова 4</p>
                     <p>ivan-abdulin@rambler.ru</p>
                 </div>
-                <div>
+                <div className={styles.footerCol}>
                     <p>Телефон/WA:</p>
                     <p> +7 (922) 111-24-90 - Иван</p>
                     <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
-                <div className={styles.footerSocials}>
-                    <ul>
-                        <li>
+                <div className={styles.footerSocials + ' ' + styles.footerCol}>
+                    <div className={styles.socialContainer}>
+                        <div className={styles.socialIcon}>
                             <Link to="/favorites">
-                                <img src="./img/heart.svg" alt="user" />Закладки
+                                <img src="./img/heart.svg" alt="user" />
                             </Link>
-                        </li>
-                        <li>
+                        </div>
+                        <p>Закладки</p>
+                    </div>
+                    <div className={styles.socialContainer}>
+                        <div className={styles.socialIcon}>
                             <a href="https://vk.com/abdulin_ekb">
-                                <img src="./img/social-vk.svg" alt="vk" />ВКонтакте
+                                <img src="./img/social-vk.svg" alt="vk" />
                             </a>
-                        </li>
-                        <li>
+                        </div>
+                        <p>VK</p>
+                    </div>
+                    <div className={styles.socialContainer}>
+                        <div className={styles.socialIcon}>
                             <a href="https://www.instagram.com/ABDULIN_Ekb">
-                                <img src="./img/social-instagram.svg" alt="instagram" />Инстаграм
+                                <img src="./img/social-instagram.svg" alt="instagram" />
                             </a>
-                        </li>
-                        <li>
+                        </div>
+                        <p>Instagram</p>
+                    </div>
+                    <div className={styles.socialContainer}>
+                        <div className={styles.socialIcon}>
                             <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw">
-                                <img src="./img/social-youtube.svg" alt="youtube" />Ютуб
+                                <img src="./img/social-youtube.svg" alt="youtube" />
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                        <p>Youtube</p>
+                    </div>
                 </div>
             </div >
-        </div>
+        </div >
     )
 }
 

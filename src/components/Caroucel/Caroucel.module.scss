@@ -13,6 +13,7 @@
 
     .caroucelImg {
         aspect-ratio: 2/1;
+        filter      : saturate(70%);
         position    : absolute;
         top         : -50%;
         width       : 100%;
@@ -21,15 +22,17 @@
     }
 
     .caroucelText {
-        margin     : 5%;
+        z-index    : 1;
+        width      : 100%;
         font-family: 'Rubik';
         font-size  : clamp(0rem, 3vw, 3rem);
         font-weight: 500;
         color      : #fff;
-        text-shadow: 1px 0 5px #333;
+        text-shadow: 0px 0 40px rgb(0, 0, 0), 0px 0 10px rgb(0, 0, 0);
         position   : absolute;
-        top        : 50%;
+        top        : 60%;
         transition : all 0.5s;
+        text-align : center;
     }
 
     .invisibleText {
@@ -60,7 +63,7 @@
     div {
         cursor          : pointer;
         transition      : all 0.3s;
-        margin          : 30px 5px;
+        margin          : 5px 5px;
         width           : 30px;
         height          : 15px;
         background-color: rgb(133, 133, 133);
