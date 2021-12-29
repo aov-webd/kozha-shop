@@ -7,56 +7,35 @@
 }
 
 .footerContainer {
-    font-family                      : 'Open Sans', sans-serif;
-    margin-top                       : 20px;
-    // padding              : 0 10%;
-    // display                       : grid;
-    // grid-template-columns         : 1fr 1fr 1fr;
-    display                          : flex;
-    // column-gap              : 100px;
-    font-size                        : clamp(0rem, 1.7vw, 1.4rem);
-    // width                      : 100%;
+    font-family: 'Open Sans', sans-serif;
+    display    : flex;
+    font-size  : clamp(0rem, 1.1vw, 1.2rem);
+    margin-top : 20px;
 
     .footerCol {
-        width: 100%;
+        width : 100%;
+        margin: 0 5%;
     }
-}
 
-.contacts {
-    img {
-        // padding: 50px;
-        width: 30%;
-    }
-}
-
-.footerSocials {
-
-    .socialContainer {
-        width  : 100%;
-        display: flex;
+    .contacts {
+        img {
+            width: 30%;
+        }
     }
 
     .socialIcon {
-        width          : 7%;
-        cursor         : pointer;
-        display        : flex;
-        // aspect-ratio: 1/1;
+        cursor    : pointer;
+        display   : flex;
+        opacity   : 0.7;
+        transition: all 0.3s;
 
-        a {
-            width        : 100%;
-            margin       : auto 0;
-            padding-right: 20%
+        &:hover {
+            opacity: 1;
         }
 
         img {
-            width     : 100%;
-            opacity   : 0.7;
-            transition: all 0.3s;
-
-            &:hover {
-                opacity: 1;
-            }
+            width       : 8%;
+            margin-right: 4%;
         }
     }
-
 }

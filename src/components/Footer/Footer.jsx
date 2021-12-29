@@ -21,38 +21,30 @@ function Footer() {
                     <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
                 <div className={styles.footerSocials + ' ' + styles.footerCol}>
-                    <div className={styles.socialContainer}>
+                    <Link to="/favorites">
                         <div className={styles.socialIcon}>
-                            <Link to="/favorites">
-                                <img src="./img/heart.svg" alt="user" />
-                            </Link>
+                            <img src="./img/heart.svg" alt="user" />
+                            <p>Закладки</p>
                         </div>
-                        <p>Закладки</p>
-                    </div>
-                    <div className={styles.socialContainer}>
+                    </Link>
+                    <a href="https://vk.com/abdulin_ekb">
                         <div className={styles.socialIcon}>
-                            <a href="https://vk.com/abdulin_ekb">
-                                <img src="./img/social-vk.svg" alt="vk" />
-                            </a>
+                            <img src="./img/social-vk.svg" alt="vk" />
+                            <p>ВКонтакте</p>
                         </div>
-                        <p>VK</p>
-                    </div>
-                    <div className={styles.socialContainer}>
+                    </a>
+                    <a href="https://www.instagram.com/ABDULIN_Ekb">
                         <div className={styles.socialIcon}>
-                            <a href="https://www.instagram.com/ABDULIN_Ekb">
-                                <img src="./img/social-instagram.svg" alt="instagram" />
-                            </a>
+                            <img src="./img/social-instagram.svg" alt="instagram" />
+                            <p>Instagram</p>
                         </div>
-                        <p>Instagram</p>
-                    </div>
-                    <div className={styles.socialContainer}>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw">
                         <div className={styles.socialIcon}>
-                            <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw">
-                                <img src="./img/social-youtube.svg" alt="youtube" />
-                            </a>
+                            <img src="./img/social-youtube.svg" alt="youtube" />
+                            <p>Youtube</p>
                         </div>
-                        <p>Youtube</p>
-                    </div>
+                    </a>
                 </div>
             </div >
         </div >

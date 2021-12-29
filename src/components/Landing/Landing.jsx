@@ -43,7 +43,8 @@ function Landing() {
                 <div>
                     <div className={styles.squareImage}><img src="./img/landing/3.jpg" alt="" /></div>
                     <div className={styles.feature}>
-                        <p>Срок изготовления. От 2-х дней.</p>
+                        <p>Срок изготовления.</p>
+                        <p>От 2-х дней.</p>
                     </div>
                 </div>
                 <div>
