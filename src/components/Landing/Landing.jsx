@@ -27,13 +27,13 @@ function Landing() {
             </div>
             <div className={styles.featuresContainer}>
                 <div>
-                    <div className={styles.squareImage}><img src="./img/landing/1.jpg" alt="" /></div>
+                    <div className={styles.squareImage}><img src="./img/landing/1_small.png" alt="" /></div>
                     <div className={styles.feature}>
                         <p>Доставка по всей России и странам СНГ Почтой России и транспортной компанией СДЭК.</p>
                     </div>
                 </div>
                 <div>
-                    <div className={styles.squareImage}><img src="./img/landing/2.jpg" alt="" /></div>
+                    <div className={styles.squareImage}><img src="./img/landing/2_small.png" alt="" /></div>
                     <div className={styles.feature}>
                         <p>Оплата производится онлайн.</p>
                         <p>Заказ изделий по предоплате.</p>
@@ -41,14 +41,14 @@ function Landing() {
                     </div>
                 </div>
                 <div>
-                    <div className={styles.squareImage}><img src="./img/landing/3.jpg" alt="" /></div>
+                    <div className={styles.squareImage}><img src="./img/landing/3_small.png" alt="" /></div>
                     <div className={styles.feature}>
                         <p>Срок изготовления.</p>
                         <p>От 2-х дней.</p>
                     </div>
                 </div>
                 <div>
-                    <div className={styles.squareImage}><img src="./img/landing/4.jpg" alt="" /></div>
+                    <div className={styles.squareImage}><img src="./img/landing/4_small.png" alt="" /></div>
                     <div className={styles.feature}>
                         <p>Нанесение лазерной гравировки в ПОДАРОК!</p>
                     </div>
