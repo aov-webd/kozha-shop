@@ -12,13 +12,13 @@
     }
 
     .caroucelImg {
-        aspect-ratio: 2/1;
-        filter      : saturate(70%);
-        position    : absolute;
-        top         : -50%;
-        width       : 100%;
-        height      : 200%;
-        transition  : all 0.5s;
+        aspect-ratio   : 2/1;
+        // filter      : saturate(50%);
+        position       : absolute;
+        top            : -50%;
+        width          : 100%;
+        height         : 200%;
+        transition     : all 0.5s;
     }
 
     .caroucelText {
@@ -28,7 +28,7 @@
         font-size  : clamp(0rem, 3vw, 3rem);
         font-weight: 500;
         color      : #fff;
-        text-shadow: 0px 0 40px rgb(0, 0, 0), 0px 0 10px rgb(0, 0, 0);
+        text-shadow: 0px 0 90px rgb(0, 0, 0), 0px 0 7px rgb(50, 50, 50);
         position   : absolute;
         top        : 60%;
         transition : all 0.5s;

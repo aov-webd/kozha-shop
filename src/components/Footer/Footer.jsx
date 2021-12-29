@@ -12,12 +12,18 @@ function Footer() {
                         <img className={styles.navbarCenter} src="/img/logo.png" alt="item" />
                     </Link>
                     <p>Прием заказов с 10:00 до 20:00 МСК</p>
-                    <p>Базируемся в Екатеринбурге, улица Евгения Савкова 4</p>
-                    <p>ivan-abdulin@rambler.ru</p>
+                    <div className={styles.address}>
+                        <img src="./img/location.png" alt="" />
+                        <p>Базируемся в Екатеринбурге, улица Евгения Савкова 4</p>
+                    </div>
+                    <div className={styles.address}>
+                        <img src="./img/mail.png" alt="" />
+                        <p>ivan-abdulin@rambler.ru</p>
+                    </div>
                 </div>
                 <div className={styles.footerCol}>
                     <p>Телефон/WA:</p>
-                    <p> +7 (922) 111-24-90 - Иван</p>
+                    <p>+7 (922) 111-24-90 - Иван</p>
                     <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
                 <div className={styles.footerSocials + ' ' + styles.footerCol}>
