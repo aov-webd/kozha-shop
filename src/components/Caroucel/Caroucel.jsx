@@ -31,11 +31,12 @@ function Caroucel() {
     let decActiveIndex = () => { setActiveIndex(activeIndex === 0 ? 7 : activeIndex - 1) }
 
     useEffect(() => {
+        console.log('useeffect setinterval')
         let interval = setInterval(() => {
             incActiveIndex();
         }, 10000);
         return () => clearInterval(interval)
-    }, [activeIndex])
+    }, [])
 
     return (
         <div

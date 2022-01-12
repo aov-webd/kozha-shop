@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Drawer from "./components/Drawer";
 import Landing from "./components/Landing/Landing";
 import Favorites from "./pages/Favorites";
+import Footer from "./components/Footer/Footer"
 
 export const AppContext = React.createContext({});
 
@@ -42,7 +43,6 @@ function App() {
     };
 
     const onChangeSearchInput = (event) => {
-        console.log(event.target.value);
         setSearchValue(event.target.value);
     };
 
@@ -64,12 +64,11 @@ function App() {
                 <Header
                     onClickCart={() => setCartOpened(true)}
                 />
-
                 <Routes>
                     <Route path="/" exact element={<Landing />} />
                     <Route path="/favorites" exact element={<Favorites />} />
                 </Routes>
-
+                <Footer />
             </div>
         </AppContext.Provider>
     );

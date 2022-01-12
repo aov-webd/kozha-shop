@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { AppContext } from '../../App'
 import styles from './Landing.module.scss';
 import Caroucel from "../Caroucel/Caroucel";
-import Footer from "../Footer/Footer"
 function Landing() {
     return (
         <div>
@@ -54,7 +53,6 @@ function Landing() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
 
     )

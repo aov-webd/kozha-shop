@@ -7,7 +7,9 @@ function Header(props) {
             <header className={styles.navbarContainer}>
                 <ul className={styles.navbarLeft}>
                     <li>
-                        Главная
+                        <Link to='/'>
+                            Главная
+                        </Link>
                     </li>
                     <li>
                         Каталог
@@ -32,17 +34,17 @@ function Header(props) {
                             </Link>
                         </li>
                         <li>
-                            <a href="https://vk.com/abdulin_ekb">
+                            <a href="https://vk.com/abdulin_ekb" target="_blank">
                                 <img src="./img/social-vk.svg" alt="vk" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/ABDULIN_Ekb">
+                            <a href="https://www.instagram.com/ABDULIN_Ekb" target="_blank">
                                 <img src="./img/social-instagram.svg" alt="instagram" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw">
+                            <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw" target="_blank">
                                 <img src="./img/social-youtube.svg" alt="youtube" />
                             </a>
                         </li>
