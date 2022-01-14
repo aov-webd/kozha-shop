@@ -36,7 +36,7 @@ function Caroucel() {
             incActiveIndex();
         }, 10000);
         return () => clearInterval(interval)
-    }, [])
+    }, [activeIndex])
 
     return (
         <div

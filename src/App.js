@@ -8,6 +8,7 @@ import Drawer from "./components/Drawer";
 import Landing from "./components/Landing/Landing";
 import Favorites from "./pages/Favorites";
 import Footer from "./components/Footer/Footer"
+import Gallery from "./components/Gallery/Gallery"
 
 export const AppContext = React.createContext({});
 
@@ -67,6 +68,7 @@ function App() {
                 <Routes>
                     <Route path="/" exact element={<Landing />} />
                     <Route path="/favorites" exact element={<Favorites />} />
+                    <Route path="/gallery" exact element={<Gallery />} />
                 </Routes>
                 <Footer />
             </div>

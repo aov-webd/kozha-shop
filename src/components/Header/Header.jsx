@@ -15,11 +15,13 @@ function Header(props) {
                         Каталог
                     </li>
                     <li>
-                        Галерея
+                        <Link to='/gallery'>
+                            Галерея
+                        </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         Выкройки
-                    </li>
+                    </li> */}
                 </ul>
                 <div className={styles.navbarCenter} >
                     <Link to='/'>
