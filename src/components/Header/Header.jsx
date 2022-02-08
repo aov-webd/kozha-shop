@@ -1,23 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import styles from './Header.module.scss';
+import { Context } from '../../index';
+import { useContext } from "react";
 
 function Header(props) {
+    const { user } = useContext(Context)
+    const history = useNavigate()
     return (
         <div>
             <header className={styles.navbarContainer}>
                 <ul className={styles.navbarLeft}>
-                    <li>
-                        <Link to='/'>
-                            Главная
-                        </Link>
+                    <li onClick={() => history('/')}>
+                        Главная
                     </li>
-                    <li>
+                    <li onClick={() => history('/catalogue')}>
                         Каталог
                     </li>
-                    <li>
-                        <Link to='/gallery'>
-                            Галерея
-                        </Link>
+                    <li onClick={() => history('/gallery')}>
+                        Галерея
                     </li>
                     {/* <li>
                         Выкройки
@@ -30,11 +30,6 @@ function Header(props) {
                 </div>
                 <div className={styles.navbarRight}>
                     <ul>
-                        <li>
-                            <Link to="/favorites">
-                                <img src="/img/heart.svg" alt="user" />
-                            </Link>
-                        </li>
                         <li>
                             <a href="https://vk.com/abdulin_ekb" target="_blank">
                                 <img src="./img/social-vk.svg" alt="vk" />
@@ -49,6 +44,9 @@ function Header(props) {
                             <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw" target="_blank">
                                 <img src="./img/social-youtube.svg" alt="youtube" />
                             </a>
+                        </li>
+                        <li>
+                            <img onClick={() => { user.isAuth ? history('/admin') : history('/login') }} src="/img/user.svg" alt="user" />
                         </li>
                     </ul>
                 </div>

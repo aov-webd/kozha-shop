@@ -45,9 +45,8 @@ function Caroucel() {
         >
             <section className={styles.caroucel}>
                 {caroucelItems.map((item, index) => (
-                    <div>
+                    <div key={index}>
                         <img
-                            key={index}
                             className={
                                 styles.caroucelImg + ' ' +
                                 (index === activeIndex ? '' : styles.invisibleImg)}

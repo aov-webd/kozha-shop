@@ -1,60 +1,51 @@
-import React from 'react';
-import Card from '../components/Card/Card';
-import { AppContext } from '../App'
+import React, { useContext, useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import TypeBar from '../components/TypeBar';
+import DeviceList from '../components/DeviceList';
+import { observer } from 'mobx-react-lite';
+import { Context } from '../index';
+import { fetchDevices, fetchTypes } from '../http/deviceAPI';
+import Pages from '../components/Pages';
 
-function Catalogue() {
+const Catalogue = observer(() => {
+    const { device } = useContext(Context)
 
-    const {
-        items,
-        searchValue,
-        setSearchValue,
-        onChangeSearchInput,
-        isLoading,
-        updField
-    } = React.useContext(AppContext);
+    useEffect(() => {
+        fetchTypes().then(data => device.setTypes(data)).catch(err => console.log(err))
+        fetchDevices({ limit: 8, page: device.page })
+            .then(data => {
+                device.setDevices(data.rows)
+                device.setTotalCount(data.count)
+            })
+            .catch(err => console.log(err))
+    }, [])
 
-    const renderItems = function () {
-        return (
-            (isLoading ? [...Array(10)] : items.filter((item) => item.name.toLowerCase().includes(searchValue)))
-                .map((item, index) => (
-                    <Card
-                        key={index}
-                        isLoading={isLoading}
-                        item={item}
-                        updField={(id, field) => updField(id, field)}
-                    />
-                )
-                )
-        )
-    }
+    useEffect(() => {
+        fetchDevices({
+            limit: 8,
+            page: device.page,
+            typeId: device.selectedType.id
+        })
+            .then(data => {
+                device.setDevices(data.rows)
+                device.setTotalCount(data.count)
+            })
+            .catch(err => console.log(err))
+    }, [device.page, device.selectedType])
 
     return (
-        <div className="content p-40">
-            <div className="mb-40  d-flex align-center justify-between">
-                <h1 className="">{searchValue ? `Поиск по запросу: ${searchValue}` : "Все изделия"}</h1>
-                <div className="search-block d-flex">
-                    <div className="ml-10 d-flex align-center">
-                        <img width={12} height={12} src="/img/search.png" alt="Search" />
-                    </div>
-
-                    <input onChange={onChangeSearchInput} value={searchValue} placeholder="Поиск ..." />
-                    {searchValue && (
-                        <img
-                            onClick={() => setSearchValue('')}
-                            className="clear cu-p"
-                            src="/img/btn-remove.svg"
-                            alt="CloseSearch"
-                        />
-                    )}
-                </div>
-            </div>
-            <div className="d-flex flex-wrap">
-                {
-                    renderItems()
-                }
-            </div>
-        </div>
+        <Container>
+            <Row className='mt-2'>
+                <Col md={3}>
+                    <TypeBar />
+                </Col>
+                <Col md={9}>
+                    <DeviceList />
+                </Col>
+            </Row>
+            <Pages />
+        </Container>
     )
-}
+})
 
-export default Catalogue;
+export default Catalogue

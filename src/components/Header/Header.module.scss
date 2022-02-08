@@ -13,9 +13,10 @@
 }
 
 .navbarLeft {
-    display       : flex;
-    width         : 100%;
-    text-transform: uppercase;
+    display        : flex;
+    width          : 100%;
+    text-transform : uppercase;
+    list-style-type: none;
 
     li {
         color      : #000;
@@ -29,7 +30,6 @@
             color: rgb(195, 0, 0);
         }
     }
-
 }
 
 .navbarCenter {
@@ -43,12 +43,14 @@
 }
 
 .navbarRight {
-    width: 100%;
+    width          : 100%;
+    list-style-type: none;
 
     ul {
-        float  : right;
-        display: flex;
-        width  : 50%;
+        list-style-type: none;
+        float          : right;
+        display        : flex;
+        width          : 50%;
 
         li {
             cursor    : pointer;
@@ -67,5 +69,4 @@
             }
         }
     }
-
 }

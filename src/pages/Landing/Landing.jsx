@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { AppContext } from '../../App'
 import styles from './Landing.module.scss';
-import Caroucel from "../Caroucel/Caroucel";
+import Caroucel from "../../components/Caroucel/Caroucel";
 function Landing() {
     return (
         <div>
@@ -21,7 +20,6 @@ function Landing() {
                         <li>первоклассная фурнитура</li>
                         <li>а также максимальная отдача к каждому заказу.</li>
                     </ul>
-
                 </div>
             </div>
             <div className={styles.featuresContainer}>
@@ -34,7 +32,7 @@ function Landing() {
                 <div>
                     <div className={styles.squareImage}><img src="./img/landing/2_small.png" alt="" /></div>
                     <div className={styles.feature}>
-                        <p>Оплата производится онлайн.</p>
+                        {/* <p>Оплата производится онлайн.</p> */}
                         <p>Заказ изделий по предоплате.</p>
 
                     </div>
