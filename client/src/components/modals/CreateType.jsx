@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Modal, Button } from 'react-bootstrap'
-import { createType } from '../../http/deviceAPI';
+import { createType, fetchTypes } from '../../http/deviceAPI';
+import { Context } from '../../index';
 
 const CreateType = ({ show, onHide }) => {
+    const { device } = useContext(Context)
 
     const [value, setValue] = useState('')
     const addType = () => {
@@ -10,6 +12,7 @@ const CreateType = ({ show, onHide }) => {
             setValue('')
             onHide()
         })
+        fetchTypes().then(data => device.setTypes(data)).catch(err => console.log(err))
     }
 
     return (

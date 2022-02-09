@@ -3,13 +3,13 @@ import { Dropdown, Form, Modal, Button, Row, Col } from 'react-bootstrap';
 import { createDevice, fetchBrands, fetchDevices, fetchTypes } from '../../http/deviceAPI';
 import { Context } from '../../index';
 
-const CreateDevice = ({ show, onHide }) => {
+const CreateDevice = ({ show, onHide, type }) => {
     const { device } = useContext(Context)
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(null)
     const [file, setFile] = useState(null)
-    const [type, setType] = useState(null)
+    // const [type, setType] = useState(null)
 
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data)).catch(err => console.log(err))
@@ -18,7 +18,7 @@ const CreateDevice = ({ show, onHide }) => {
 
     const addDevice = () => {
         try {
-            if (name === '' || price === null || file === null || type === null) {
+            if (name === '' || price === null || file === null) {
                 alert('Заполните все поля')
                 return
             }
@@ -30,6 +30,7 @@ const CreateDevice = ({ show, onHide }) => {
                 formData.append('img', f)
                 console.log(f)
             }
+            console.log(formData.img)
             formData.append('typeId', type.id)
             createDevice(formData).then(() => onHide())
         } catch (e) {
@@ -46,24 +47,11 @@ const CreateDevice = ({ show, onHide }) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Добавить изделие
+                    {`Добавить изделие '${type.name}'`}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Dropdown className='mt-2 mb-2'>
-                        <Dropdown.Toggle>{(type !== null && type.name) || 'Выберите тип'}</Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {device.types.map(type =>
-                                <Dropdown.Item
-                                    key={type.id}
-                                    onClick={() => setType(type)}
-                                >
-                                    {type.name}
-                                </Dropdown.Item>
-                            )}
-                        </Dropdown.Menu>
-                    </Dropdown>
                     <Form.Control
                         value={name}
                         onChange={(e) => setName(e.target.value)}

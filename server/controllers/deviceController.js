@@ -9,11 +9,19 @@ class DeviceController {
             let { name, price, brandId, typeId, description } = req.body
             let { img } = req.files
             let fileNames = []
-            img.forEach(image => {
+            console.log(img)
+            if (Array.isArray(img)) {
+                img.forEach(image => {
+                    let fileName = uuid.v4() + ".png"
+                    fileNames.push(fileName)
+                    image.mv(path.resolve(__dirname, '..', 'static', fileName))
+                })
+            } else {
                 let fileName = uuid.v4() + ".png"
                 fileNames.push(fileName)
-                image.mv(path.resolve(__dirname, '..', 'static', fileName))
-            })
+                img.mv(path.resolve(__dirname, '..', 'static', fileName))
+            }
+
             const device = await Device.create({ name, price, description, brandId, typeId, img: fileNames })
             return res.json(device)
         } catch (e) {
@@ -53,6 +61,18 @@ class DeviceController {
             where: { id }
         })
         return res.json(device)
+    }
+
+    async remove(req, res) {
+        try {
+            const { id } = req.params
+            const device = await Device.findOne({ where: { id } })
+            if (device !== null)
+                await device.destroy();
+            return res.json(device)
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
     }
 
 }

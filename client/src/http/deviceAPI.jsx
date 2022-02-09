@@ -5,6 +5,11 @@ export const createType = async (type) => {
     return data
 }
 
+export const removeType = async (type) => {
+    const { data } = await $authHost.post('api/type/rm', type)
+    return data
+}
+
 export const fetchTypes = async () => {
     const { data } = await $host.get('api/type')
     return data
@@ -35,3 +40,7 @@ export const fetchOneDevice = async (id) => {
     return data
 }
 
+export const removeDevice = async (id) => {
+    const { data } = await $host.get('api/device/rm/' + id)
+    return data
+}
