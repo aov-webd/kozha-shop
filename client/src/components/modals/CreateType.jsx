@@ -8,11 +8,14 @@ const CreateType = ({ show, onHide }) => {
 
     const [value, setValue] = useState('')
     const addType = () => {
-        createType({ name: value }).then(data => {
-            setValue('')
-            onHide()
-        })
-        fetchTypes().then(data => device.setTypes(data)).catch(err => console.log(err))
+        createType({ name: value })
+            .then(fetchTypes)
+            .then(data => device.setTypes(data))
+            .catch(err => console.log(err))
+            .finally(() => {
+                setValue('')
+                onHide()
+            })
     }
 
     return (

@@ -9,11 +9,15 @@ const CreateDevice = ({ show, onHide, type }) => {
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(null)
     const [file, setFile] = useState(null)
-    // const [type, setType] = useState(null)
 
     useEffect(() => {
-        fetchTypes().then(data => device.setTypes(data)).catch(err => console.log(err))
-        // fetchDevices().then(data => device.setDevices(data.rows)).catch(err => console.log(err))
+        fetchTypes()
+            .then(data => device.setTypes(data))
+            .catch(err => console.log(err))
+
+        fetchDevices()
+            .then(data => device.setDevices(data.rows))
+            .catch(err => console.log(err))
     }, [])
 
     const addDevice = () => {
@@ -30,9 +34,10 @@ const CreateDevice = ({ show, onHide, type }) => {
                 formData.append('img', f)
                 console.log(f)
             }
-            console.log(formData.img)
             formData.append('typeId', type.id)
-            createDevice(formData).then(() => onHide())
+            createDevice(formData)
+                .then(fetchDevices)
+                .then(onHide)
         } catch (e) {
             alert(e)
         }

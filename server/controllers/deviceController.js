@@ -2,6 +2,7 @@ const { Device, DeviceInfo } = require('../models/models')
 const ApiError = require('../error/ApiError')
 const uuid = require('uuid')
 const path = require('path')
+const fs = require('fs')
 
 class DeviceController {
     async create(req, res, next) {
@@ -9,7 +10,7 @@ class DeviceController {
             let { name, price, brandId, typeId, description } = req.body
             let { img } = req.files
             let fileNames = []
-            console.log(img)
+
             if (Array.isArray(img)) {
                 img.forEach(image => {
                     let fileName = uuid.v4() + ".png"
@@ -56,19 +57,31 @@ class DeviceController {
     }
 
     async getOne(req, res) {
-        const { id } = req.params
-        const device = await Device.findOne({
-            where: { id }
-        })
-        return res.json(device)
+        try {
+            const { id } = req.params
+            const device = await Device.findOne({
+                where: { id }
+            })
+            return res.json(device)
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
     }
 
     async remove(req, res) {
         try {
             const { id } = req.params
             const device = await Device.findOne({ where: { id } })
-            if (device !== null)
+            if (device !== null) {
+                for (let image of device.img) {
+                    try {
+                        fs.unlinkSync(path.resolve(__dirname, '..', 'static', image))
+                    } catch (err) {
+                        console.error(err)
+                    }
+                }
                 await device.destroy();
+            }
             return res.json(device)
         } catch (e) {
             next(ApiError.badRequest(e.message))
