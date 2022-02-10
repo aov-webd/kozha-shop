@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -10,9 +10,24 @@ import Catalogue from "./pages/Catalogue";
 import Admin from "./pages/Admin";
 import { Context } from './index'
 import { observer } from "mobx-react-lite";
+import { Spinner } from "react-bootstrap";
+import { check } from "./http/userAPI";
 
 const App = observer(() => {
     const { user } = useContext(Context)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        check().then(data => {
+            user.setUser(true)
+            user.setIsAuth(true)
+        }).finally(() => setLoading(false))
+    }, [])
+
+    if (loading) {
+        return <Spinner animation={"grow"} />
+    }
+
     return (
         <div>
             <Header />

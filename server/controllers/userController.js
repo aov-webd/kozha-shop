@@ -38,17 +38,18 @@ class UserController {
         console.log(req.body)
         const user = await User.findOne({ where: { email } })
         if (!user) {
-            return next(ApiError.internal('User not found'))
+            return next(ApiError.internal('Неверное имя пользователья или пароль'))
         }
         let comparePassword = bcrypt.compareSync(password, user.password)
         if (!comparePassword) {
-            return next(ApiError.internal('Incorrect password'))
+            return next(ApiError.internal('Неверное имя пользователья или пароль'))
         }
         const token = generateJwt(user.id, user.email, user.role)
         return res.json({ token })
     }
 
     async check(req, res, next) {
+        console.log(req)
         const token = generateJwt(req.user.id, req.user.email, req.user.role)
         return res.json({ token })
     }

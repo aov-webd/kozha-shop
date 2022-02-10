@@ -18,9 +18,7 @@ const Admin = observer(() => {
             .then(data => device.setTypes(data))
             .catch(err => console.log(err))
 
-        fetchDevices({
-            limit: 8, page: device.page
-        })
+        fetchDevices()
             .then(data => {
                 device.setDevices(data.rows)
                 device.setTotalCount(data.count)
@@ -51,58 +49,55 @@ const Admin = observer(() => {
                     <Accordion.Item key={type.id} eventKey={index}>
                         <Accordion.Header className='d-flex'>
                             <h3 className='me-3'>{type.name}</h3>
+
+                        </Accordion.Header>
+                        <Accordion.Body>
                             <Button
-                                variant={'outline-danger'}
+                                variant={'danger'}
                                 onClick={() => {
-                                    if (window.confirm(`Удалить тип '${type.name}'?`)) {
+                                    if (window.confirm(`Удалить тип '${type.name}' и все относящиеся к нему изделия?`)) {
                                         removeType(type).then(updateCat)
                                     }
                                 }}
                             >
                                 Удалить тип
                             </Button>
-                        </Accordion.Header>
-                        <Accordion.Body>
-                            <div>
-                                <Button
-                                    variant='success'
-                                    onClick={() => {
-                                        setModalDeviceType(type)
-                                        setDeviceVisible(true)
-                                    }}
-                                >
-                                    Добавить изделие
-                                </Button>
-                            </div>
+                            <Button
+                                className='ms-3'
+                                variant='success'
+                                onClick={() => {
+                                    setModalDeviceType(type)
+                                    setDeviceVisible(true)
+                                }}
+                            >
+                                Добавить изделие
+                            </Button>
                             <ListGroup>
                                 {device.devices.filter((device) => device.typeId === type.id).map((device =>
-                                    <ListGroup.Item className='display-flex'>
+                                    <ListGroup.Item className='display-flex mt-3' key={device.id}>
                                         <Button
                                             className='me-3'
-                                            onClick={() => {
-                                                if (window.confirm('Удалить?')) {
-                                                    removeDevice(device.id)
-                                                        .then(updateCat)
+                                            onClick={
+                                                () => {
+                                                    if (window.confirm('Удалить?')) {
+                                                        removeDevice(device.id)
+                                                            .then(updateCat)
+                                                    }
                                                 }
-                                            }
                                             }
                                             variant={'outline-danger'}
                                         >
                                             Удалить
                                         </Button>
-                                        <Button
+                                        {/* <Button
                                             className='me-3'
-                                            onClick={() => {
-                                                removeDevice(device.id)
-                                                updateCat()
-                                            }}
                                             variant={'outline-dark'}
                                         >
                                             Изменить
-                                        </Button>
+                                        </Button> */}
                                         {device.name}
-                                        {device.img.map((image =>
-                                            <Image className='ms-3' width={50} height={50} src={process.env.REACT_APP_API_URL + image} />
+                                        {device.img.map(((image, index) =>
+                                            <Image className='ms-3' key={index} width={50} height={50} src={process.env.REACT_APP_API_URL + image} />
                                         ))}
                                     </ListGroup.Item>
                                 ))}

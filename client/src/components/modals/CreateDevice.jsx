@@ -7,7 +7,7 @@ const CreateDevice = ({ show, onHide, type }) => {
     const { device } = useContext(Context)
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
-    const [price, setPrice] = useState(null)
+    const [price, setPrice] = useState('')
     const [file, setFile] = useState(null)
 
     useEffect(() => {
@@ -28,16 +28,25 @@ const CreateDevice = ({ show, onHide, type }) => {
             }
             const formData = new FormData()
             formData.append('name', name)
-            formData.append('description', name)
+            formData.append('description', description)
             formData.append('price', `${price}`)
             for (let f of file) {
                 formData.append('img', f)
-                console.log(f)
             }
             formData.append('typeId', type.id)
             createDevice(formData)
                 .then(fetchDevices)
-                .then(onHide)
+                .then(data => {
+                    device.setDevices(data.rows)
+                    device.setTotalCount(data.count)
+                    setName('')
+                    setDescription('')
+                    setPrice('')
+                    setFile(null)
+                    onHide()
+                })
+                .then()
+                .catch(err => console.log(err))
         } catch (e) {
             alert(e)
         }
@@ -89,7 +98,13 @@ const CreateDevice = ({ show, onHide, type }) => {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant='outline-danger' onClick={onHide}>Закрыть</Button>
+                <Button variant='outline-danger' onClick={() => {
+                    setName('')
+                    setDescription('')
+                    setPrice(null)
+                    setFile(null)
+                    onHide()
+                }}>Закрыть</Button>
                 <Button variant='outline-success' onClick={addDevice}>Добавить</Button>
             </Modal.Footer>
         </Modal>
