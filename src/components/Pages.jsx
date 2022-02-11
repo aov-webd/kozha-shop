@@ -12,7 +12,6 @@ const Pages = observer(() => {
     for (let i = 0; i < pageCount; i++) {
         pages.push(i + 1)
     }
-    console.log(pages)
 
     return (
         <div>

@@ -22,17 +22,11 @@ function Footer() {
                     </div>
                 </div>
                 <div className={styles.footerCol}>
-                    <p>Телефон/WA:</p>
+                    <p>Телефон/WhatsApp:</p>
                     <p>+7 (922) 111-24-90 - Иван</p>
                     <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
                 <div className={styles.footerSocials + ' ' + styles.footerCol}>
-                    <Link to="/favorites">
-                        <div className={styles.socialIcon}>
-                            <img src="./img/heart.svg" alt="user" />
-                            <p>Закладки</p>
-                        </div>
-                    </Link>
                     <a href="https://vk.com/abdulin_ekb">
                         <div className={styles.socialIcon}>
                             <img src="./img/social-vk.svg" alt="vk" />
