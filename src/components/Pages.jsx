@@ -16,6 +16,8 @@ const Pages = observer(() => {
     return (
         <div>
             <Pagination className='mt-3'>
+                <Pagination.First />
+                <Pagination.Prev />
                 {pages.map(page =>
                     <Pagination.Item
                         key={page}
@@ -25,6 +27,8 @@ const Pages = observer(() => {
                         {page}
                     </Pagination.Item>
                 )}
+                <Pagination.Next />
+                <Pagination.Last />
             </Pagination>
         </div>
     );
