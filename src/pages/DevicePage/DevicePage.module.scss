@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@700&family=Roboto+Slab:wght@600&family=Montserrat:wght@100;500&display=swap');
+
 .imageSection {
     display              : grid;
     grid-template-columns: repeat(4, 1fr);
@@ -5,15 +7,19 @@
     row-gap              : 10px;
 
     .mainImage {
-        grid-column-start: 1;
-        grid-column-end  : 5;
-        aspect-ratio     : 1/1;
-        width            : 100%
+        grid-column-start   : 1;
+        grid-column-end     : 5;
+        // aspect-ratio     : 1/1;
+        width               : 100%;
+        border-radius       : 5px;
+        box-shadow          : 0px 0 4px rgb(150, 150, 150);
     }
 
     .restImages {
-        aspect-ratio: 1/1;
-        width       : 100%
+        aspect-ratio : 1/1;
+        width        : 100%;
+        border-radius: 5px;
+        box-shadow   : 0px 0 4px rgb(150, 150, 150);
     }
 }
 
@@ -36,8 +42,7 @@
     }
 
     .bigImage {
-        width           : 50%;
-        height          : 50%;
+        width           : 900px;
         position        : fixed;
         top             : 50%;
         left            : 50%;
@@ -51,4 +56,20 @@
 .visible {
     z-index: 8;
     opacity: 100%;
+}
+
+.title {
+    font-family: "Roboto Slab";
+    font-weight: 700;
+}
+
+.description {
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.price {
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    color      : cadetblue;
 }

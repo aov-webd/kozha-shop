@@ -23,6 +23,7 @@ const DevicePage = () => {
     if (loading) {
         return <Spinner animation={"grow"} />
     }
+
     return (
         <Container className='mt-3' >
             <div
@@ -35,7 +36,7 @@ const DevicePage = () => {
                 <img className={styles.bigImage} src={imageToShow} alt="" />
             </div>
             <Row>
-                <Col md={4} className={styles.imageSection}>
+                <Col className={styles.imageSection}>
                     {device.img.map((image, index) =>
                         <Image
                             onClick={() => {
@@ -47,12 +48,12 @@ const DevicePage = () => {
                             src={process.env.REACT_APP_API_URL + image} />
                     )}
                 </Col>
-                <Col md={4}>
+                <Col>
                     <Row>
-                        <h2>{device.name}</h2>
-                        <h3>₽ {device.price}</h3>
-                        <h6>Описание:</h6>
-                        <p>{device.description}</p>
+                        <h2 className={styles.title}>{device.name}</h2>
+                        <h3 className={styles.price}>₽ {device.price}</h3>
+                        <h6 className={styles.description}>Описание:</h6>
+                        <p className={styles.description}>{device.description}</p>
                     </Row>
                 </Col>
             </Row >

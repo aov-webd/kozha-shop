@@ -32,11 +32,14 @@ function Gallery() {
                             <div className={styles.sectionGrid}>
                                 {[...Array(section.quantity)].map((item, index) => {
                                     return (
-                                        <div className={styles.imgContiner}>
-                                            <img
-                                                onClick={() => { setImageOverlay(true); setimageToShow(`/img/gallery/${section.eng}/${index}.png`) }}
-                                                src={`/img/gallery/${section.eng}/${index}.png`}
-                                                alt={`${section.eng}-${index}`} />
+                                        <div className={styles.imgContiner}
+                                            style={{
+                                                backgroundSize: 'cover',
+                                                backgroundPosition: 'center',
+                                                backgroundImage: `url(/img/gallery/${section.eng}/${index}.png)`
+                                            }}
+                                            onClick={() => { setImageOverlay(true); setimageToShow(`/img/gallery/${section.eng}/${index}.png`) }}
+                                        >
                                         </div>
                                     )
                                 })}
