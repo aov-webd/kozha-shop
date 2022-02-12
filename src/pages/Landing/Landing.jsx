@@ -3,7 +3,11 @@ import styles from './Landing.module.scss';
 import Caroucel from "../../components/Caroucel/Caroucel";
 function Landing() {
     return (
-        <div>
+        <div
+            style={{
+                maxWidth: '1440px',
+                margin: 'auto'
+            }}>
             <Caroucel />
             <div className={styles.boxB}>
                 <div className={styles.boxBLeft}>

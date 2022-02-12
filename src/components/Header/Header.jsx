@@ -7,48 +7,51 @@ function Header(props) {
     const { user } = useContext(Context)
     const history = useNavigate()
     return (
-        <div>
+        <div
+            style={{
+                background: '#ffffff',
+                maxWidth: '1440px',
+                margin: 'auto'
+            }}>
             <header className={styles.navbarContainer}>
-                <ul className={styles.navbarLeft}>
-                    <li onClick={() => history('/')}>
+                <div className={styles.navbarLeft}>
+                    <div onClick={() => history('/')}>
                         Главная
-                    </li>
-                    <li onClick={() => history('/catalogue')}>
+                    </div>
+                    <div onClick={() => history('/catalogue')}>
                         Каталог
-                    </li>
-                    <li onClick={() => history('/gallery')}>
+                    </div>
+                    <div onClick={() => history('/gallery')}>
                         Галерея
-                    </li>
+                    </div>
                     {/* <li>
                         Выкройки
                     </li> */}
-                </ul>
+                </div>
                 <div className={styles.navbarCenter} >
                     <Link to='/'>
                         <img className={styles.navbarCenter} src="/img/logo.png" alt="item" />
                     </Link>
                 </div>
                 <div className={styles.navbarRight}>
-                    <ul>
-                        <li>
-                            <a href="https://vk.com/abdulin_ekb" target="_blank">
-                                <img src="./img/social-vk.svg" alt="vk" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/ABDULIN_Ekb" target="_blank">
-                                <img src="./img/social-instagram.svg" alt="instagram" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw" target="_blank">
-                                <img src="./img/social-youtube.svg" alt="youtube" />
-                            </a>
-                        </li>
-                        <li>
-                            <img onClick={() => { user.isAuth ? history('/admin') : history('/login') }} src="/img/user.svg" alt="user" />
-                        </li>
-                    </ul>
+                    <div>
+                        <a href="https://vk.com/abdulin_ekb" target="_blank">
+                            <img src="./img/social-vk.svg" alt="vk" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.instagram.com/ABDULIN_Ekb" target="_blank">
+                            <img src="./img/social-instagram.svg" alt="instagram" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/channel/UCMffuhoOOYdMYF-8F_7RfHw" target="_blank">
+                            <img src="./img/social-youtube.svg" alt="youtube" />
+                        </a>
+                    </div>
+                    <div>
+                        <img onClick={() => { user.isAuth ? history('/admin') : history('/login') }} src="/img/user.svg" alt="user" />
+                    </div>
                 </div>
             </header>
             <div className={styles.headerLine}></div>

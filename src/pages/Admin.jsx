@@ -97,7 +97,7 @@ const Admin = observer(() => {
                                         </Button> */}
                                         {device.name}
                                         {device.img.map(((image, index) =>
-                                            <Image className='ms-3' key={index} width={50} height={50} src={process.env.REACT_APP_API_URL + image} />
+                                            <Image className='ms-3' key={index} width={30} height={30} src={process.env.REACT_APP_API_URL + image} />
                                         ))}
                                     </ListGroup.Item>
                                 ))}

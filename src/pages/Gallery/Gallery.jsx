@@ -14,7 +14,13 @@ function Gallery() {
     let [imageToShow, setimageToShow] = useState(``)
 
     return (
-        <div className='gallery'>
+        <div
+            style={{
+                background: '#ffffff',
+                maxWidth: '1440px',
+                margin: 'auto'
+            }}
+            className='gallery'>
             <div
                 className={styles.bigImageContainer + (imageOverlay === true ? (' ' + styles.visible) : '')}
             >
@@ -25,14 +31,14 @@ function Gallery() {
                 <img className={styles.bigImage} src={imageToShow} alt="" />
             </div>
             {
-                gallerySections.map(section => {
+                gallerySections.map((section, index) => {
                     return (
-                        <section>
+                        <section key={index}>
                             <h3>{section.title}</h3>
                             <div className={styles.sectionGrid}>
                                 {[...Array(section.quantity)].map((item, index) => {
                                     return (
-                                        <div className={styles.imgContiner}
+                                        <div key={index} className={styles.imgContiner}
                                             style={{
                                                 backgroundSize: 'cover',
                                                 backgroundPosition: 'center',
@@ -47,7 +53,6 @@ function Gallery() {
                         </section>)
                 })
             }
-
         </div>
     )
 }

@@ -4,10 +4,15 @@ import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <div>
+        <div
+            style={{
+                background: '#ffffff',
+                maxWidth: '1440px',
+                margin: 'auto'
+            }}>
             <div className={styles.footerLine}></div>
             <div className={styles.footerContainer}>
-                <div className={styles.contacts + ' ' + styles.footerCol}>
+                <div className={styles.footerAddress}>
                     <Link to='/'>
                         <img className={styles.navbarCenter} src="/img/logo.png" alt="item" />
                     </Link>
@@ -21,12 +26,12 @@ function Footer() {
                         <p>ivan-abdulin@rambler.ru</p>
                     </div>
                 </div>
-                <div className={styles.footerCol}>
+                <div className={styles.footerPhones} >
                     <p>Телефон/WhatsApp:</p>
                     <p>+7 (922) 111-24-90 - Иван</p>
                     <p>+7 (905) 806-62-61 - Юлия</p>
                 </div>
-                <div className={styles.footerSocials + ' ' + styles.footerCol}>
+                <div className={styles.footerSocials}>
                     <a href="https://vk.com/abdulin_ekb">
                         <div className={styles.socialIcon}>
                             <img src="./img/social-vk.svg" alt="vk" />

@@ -7,17 +7,15 @@
 }
 
 .footerContainer {
-    font-family: 'Open Sans', sans-serif;
-    display    : flex;
-    font-size  : clamp(0rem, 1.1vw, 1.2rem);
-    margin-top : 20px;
+    font-family          : 'Open Sans', sans-serif;
+    display              : grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size            : clamp(0rem, 1.1vw, 1.2rem);
+    margin-top           : 20px;
 
-    .footerCol {
-        width : 100%;
-        margin: 0 5%;
-    }
+    .footerAddress {
+        margin-left: 5%;
 
-    .contacts {
         img {
             width: 30%;
         }
@@ -32,19 +30,38 @@
         }
     }
 
-    .socialIcon {
-        cursor    : pointer;
-        display   : flex;
-        opacity   : 0.7;
-        transition: all 0.3s;
+    .footerPhones {
+        margin-left: 5%;
+    }
 
-        &:hover {
-            opacity: 1;
+    .footerSocials {
+        margin-left: 5%;
+
+        a {
+            color          : black;
+            text-decoration: none;
         }
 
-        img {
-            width       : 8%;
-            margin-right: 4%;
+        .socialIcon {
+            cursor    : pointer;
+            display   : flex;
+            opacity   : 0.7;
+            transition: all 0.3s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            p {
+                margin: auto 0
+            }
+
+            img {
+                width       : 7%;
+                aspect-ratio: 1/1;
+                margin-right: 4%;
+            }
         }
     }
+
 }
