@@ -13,7 +13,7 @@ import { observer } from "mobx-react-lite";
 import { Spinner } from "react-bootstrap";
 import { check } from "./http/userAPI";
 import { ADMIN_ROUTE, DEVICE_ROUTE } from "./utils/consts";
-import DevicePage from "./pages/DevicePage";
+import DevicePage from "./pages/DevicePage/DevicePage";
 
 const App = observer(() => {
     const { user } = useContext(Context)

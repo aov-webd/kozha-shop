@@ -32,10 +32,9 @@
 
 
     .boxBLeft {
-        width        : 30%;
-        aspect-ratio : 1/1;
-        overflow     : hidden;
-        border-radius: 10px;
+        width       : 30%;
+        aspect-ratio: 1/1;
+        overflow    : hidden;
 
         img {
             width    : 150%;
@@ -44,7 +43,6 @@
     }
 
     .boxBRight {
-        border-radius   : 10px;
         background-color: rgb(37, 37, 37);
         margin-left     : 20px;
         width           : 70%;
@@ -68,9 +66,8 @@
     margin-top           : 20px;
 
     .squareImage {
-        border-radius: 10px;
-        aspect-ratio : 1/1;
-        overflow     : hidden;
+        aspect-ratio: 1/1;
+        overflow    : hidden;
 
         img {
             width    : 120%;
@@ -79,7 +76,6 @@
     }
 
     .feature {
-        border-radius   : 10px;
         transform       : translateY(-50%);
         margin          : auto;
         z-index         : 1;

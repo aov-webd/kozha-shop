@@ -12,8 +12,9 @@ const DeviceItem = ({ device }) => {
                 border={'light'}
             >
                 <Image width={150} height={150} src={process.env.REACT_APP_API_URL + device.img[0]} />
-                <div className='mt-1 d-flex justify-content-between aling-items-center'>
+                <div className='mt-1'>
                     <div>{device.name}</div>
+                    <div>₽{device.price}</div>
                 </div>
             </Card>
         </Col>

@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 .caroucel {
-    max-width    : 1440px;
-    box-sizing   : border-box;
-    overflow     : hidden;
-    position     : relative;
-    aspect-ratio : 2/1;
-    border-radius: 10px;
+    max-width   : 1440px;
+    box-sizing  : border-box;
+    overflow    : hidden;
+    position    : relative;
+    aspect-ratio: 2/1;
 
     .invisibleImg {
         opacity: 0;
