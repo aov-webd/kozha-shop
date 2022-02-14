@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import { Context } from '../../index';
 import { useContext } from "react";
 
-function Header(props) {
+function Header() {
     const { user } = useContext(Context)
     const history = useNavigate()
     return (
