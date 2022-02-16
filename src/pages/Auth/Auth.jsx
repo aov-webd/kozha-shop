@@ -56,15 +56,21 @@ const Auth = observer(() => {
                         type='password'
                     />
                     <Row className='display-flex justify-content-between mt-3 pl-3 pr-3'>
-                        {isLogin ?
-                            <div>
-                                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
-                            </div>
-                            :
-                            <div>
-                                Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
+                        {
+                            process.env.EN_REGISTRATION ? (
+                                isLogin ?
+                                    <div>
+                                        Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
+                                    </div>
+                                    :
+                                    <div>
+                                        Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
+                                    </div>
+                            ) : <div>
+                                <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
                             </div>
                         }
+
                         <Button
                             variant={'outline-success'}
                             onClick={click}
@@ -73,7 +79,7 @@ const Auth = observer(() => {
                         </Button>
                     </Row>
                 </Form>
-            </Card>
+            </Card >
         </Container >
     );
 });
