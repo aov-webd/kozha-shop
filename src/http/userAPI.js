@@ -8,15 +8,23 @@ export const registration = async (email, password) => {
 }
 
 export const login = async (email, password) => {
-    const { data } = await $host.post('api/user/login', { email, password })
-    localStorage.setItem('token', data.token)
-    return jwt_decode(data.token)
+    try {
+        const { data } = await $host.post('api/user/login', { email, password })
+        localStorage.setItem('token', data.token)
+        return jwt_decode(data.token)
+    } catch (e) {
+        console.log(e)
+    }
 }
 
 export const check = async () => {
-    const { data } = await $authHost.get('api/user/auth')
-        .catch(e => console.log(e))
-    localStorage.setItem('token', data.token)
-    return jwt_decode(data.token)
+    try {
+        const { data } = await $authHost.get('api/user/auth')
+            .catch(e => console.log(e))
+        localStorage.setItem('token', data.token)
+        return jwt_decode(data.token)
+    } catch (e) {
+        console.log(e)
+    }
 }
 
