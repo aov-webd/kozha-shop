@@ -25,7 +25,7 @@ const App = observer(() => {
                 user.setUser(true)
                 user.setIsAuth(true)
             })
-            .catch(e)(
+            .catch(e =>
                 console.log(e.message)
             )
             .finally(() => setLoading(false))
