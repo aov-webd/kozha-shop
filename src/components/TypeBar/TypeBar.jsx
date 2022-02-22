@@ -9,7 +9,7 @@ const TypeBar = observer(() => {
     const { device } = useContext(Context)
     return (
         <ListGroup variant="flush">
-            {device.types.map(type =>
+            {device?.types?.map(type =>
                 <ListGroup.Item
                     className={styles.item}
                     action variant="light"

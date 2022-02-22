@@ -8,7 +8,7 @@ const DeviceList = observer(() => {
     const { device } = useContext(Context)
     return (
         <Row>
-            {device.devices !== undefined && device.devices.map(device =>
+            {device?.devices?.map(device =>
                 <DeviceItem
                     key={device.id}
                     device={device}

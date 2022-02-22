@@ -14,8 +14,8 @@ const Catalogue = observer(() => {
         fetchTypes().then(data => device.setTypes(data)).catch(err => console.log(err))
         fetchDevices({ limit: 8, page: device.page })
             .then(data => {
-                device.setDevices(data.rows)
-                device.setTotalCount(data.count)
+                device.setDevices(data?.rows)
+                device.setTotalCount(data?.count)
             })
             .catch(err => console.log(err))
     }, [])
@@ -27,8 +27,8 @@ const Catalogue = observer(() => {
             typeId: device.selectedType.id
         })
             .then(data => {
-                device.setDevices(data.rows)
-                device.setTotalCount(data.count)
+                device.setDevices(data?.rows)
+                device.setTotalCount(data?.count)
             })
             .catch(err => console.log(err))
     }, [device.page, device.selectedType])
