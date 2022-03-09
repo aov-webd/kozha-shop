@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <div
+        <div className='footer'
             style={{
                 background: '#ffffff',
                 maxWidth: '1440px',
-                margin: 'auto'
+                margin: '0 auto'
             }}>
             <div className={styles.footerLine}></div>
             <div className={styles.footerContainer}>

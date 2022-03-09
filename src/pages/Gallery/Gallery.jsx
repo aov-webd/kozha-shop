@@ -16,11 +16,10 @@ function Gallery() {
     return (
         <div
             style={{
-                background: '#ffffff',
                 maxWidth: '1440px',
-                margin: 'auto'
+                flex: '1 1 auto'
             }}
-            className='gallery'>
+            className='content gallery'>
             <div
                 className={styles.bigImageContainer + (imageOverlay === true ? (' ' + styles.visible) : '')}
             >

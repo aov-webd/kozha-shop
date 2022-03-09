@@ -5,6 +5,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { registration, login } from '../../http/userAPI';
 import { REGISTRATION_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../../utils/consts'
 import { Context } from '../../index'
+import styles from './Auth.module.scss';
 
 const Auth = observer(() => {
     const { user } = useContext(Context)
@@ -33,8 +34,7 @@ const Auth = observer(() => {
 
     return (
         <Container
-            className='d-flex justify-content-center align-items-center'
-            style={{ height: window.innerHeight - 54 }}
+            className={`${styles.content} content d-flex justify-content-center align-items-center`}
         >
             <Card style={{ width: 600 }} className='p-3'>
                 <h2 className='m-auto'>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>

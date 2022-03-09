@@ -34,7 +34,12 @@ const Catalogue = observer(() => {
     }, [device.page, device.selectedType])
 
     return (
-        <Container>
+        <Container
+            style={{
+                flex: '1 1 auto',
+            }}
+            className='content'
+        >
             <Row className='mt-2'>
                 <Col md={3}>
                     <TypeBar />

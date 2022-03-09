@@ -7,11 +7,11 @@ function Header() {
     const { user } = useContext(Context)
     const history = useNavigate()
     return (
-        <div
+        <div className="header"
             style={{
                 background: '#ffffff',
                 maxWidth: '1440px',
-                margin: 'auto'
+                margin: '0 auto'
             }}>
             <header className={styles.navbarContainer}>
                 <div className={styles.navbarLeft}>

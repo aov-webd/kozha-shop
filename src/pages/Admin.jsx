@@ -31,7 +31,7 @@ const Admin = observer(() => {
     }, [])
 
     return (
-        <Container>
+        <Container className='content'>
             <h3>Панель администрирования</h3>
             <Container className='display-flex'>
                 <Button

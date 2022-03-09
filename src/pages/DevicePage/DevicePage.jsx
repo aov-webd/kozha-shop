@@ -25,7 +25,11 @@ const DevicePage = () => {
     }
 
     return (
-        <Container className='mt-3' >
+        <Container style={{
+            maxWidth: '1440px',
+            flex: '1 1 auto'
+        }}
+            className='content mt-3' >
             <div
                 className={styles.bigImageContainer + (imageOverlay === true ? (' ' + styles.visible) : '')}
             >

@@ -6,7 +6,8 @@ function Landing() {
         <div
             style={{
                 maxWidth: '1440px',
-                margin: 'auto'
+                margin: 'auto',
+                flex: '1 1 auto'
             }}>
             <Caroucel />
             <div className={styles.boxB}>

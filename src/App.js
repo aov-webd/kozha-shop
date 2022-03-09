@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header/Header";
 import Landing from "./pages/Landing/Landing";
 import Footer from "./components/Footer/Footer"
@@ -14,6 +13,7 @@ import { Spinner } from "react-bootstrap";
 import { check } from "./http/userAPI";
 import { ADMIN_ROUTE, DEVICE_ROUTE } from "./utils/consts";
 import DevicePage from "./pages/DevicePage/DevicePage";
+import styles from './App.module.scss';
 
 const App = observer(() => {
     const { user } = useContext(Context)
@@ -36,7 +36,7 @@ const App = observer(() => {
     }
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             <Header />
             <Routes>
                 <Route path="/" exact element={<Landing />} />
