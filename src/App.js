@@ -44,7 +44,10 @@ const App = observer(() => {
                 <Route path="/gallery" exact element={<Gallery />} />
                 <Route path="/catalogue" exact element={<Catalogue />} />
                 <Route path="/login" exact element={<Auth />} />
-                <Route path="/registration" exact element={<Auth />} />
+                {
+                    process.env.REACT_APP_EN_REGISTRATION && (
+                        <Route path="/registration" exact element={<Auth />} />)
+                }
                 {user.isAuth === true && <Route path={ADMIN_ROUTE} exact element={<Admin />} />}
             </Routes>
             <Footer />

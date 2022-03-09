@@ -11,7 +11,6 @@ const Auth = observer(() => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const history = useNavigate()
-
     const location = useLocation()
     const isLogin = location.pathname === LOGIN_ROUTE
 
@@ -24,11 +23,9 @@ const Auth = observer(() => {
                 data = await registration(email, password)
                 console.log('registration')
             }
-            // console.log(data)
             user.setUser(data)
             user.setIsAuth(true)
             history(SHOP_ROUTE)
-            // console.log(user.isAuth)
         } catch (error) {
             alert(error.response.data.message)
         }
@@ -49,36 +46,33 @@ const Auth = observer(() => {
                         onChange={e => setEmail(e.target.value)}
                     />
                     <Form.Control
-                        className='mt-3'
+                        className='mt-3 mb-3'
                         placeholder='Введите пароль'
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         type='password'
                     />
-                    <Row className='display-flex justify-content-between mt-3 pl-3 pr-3'>
-                        {
-                            process.env.EN_REGISTRATION ? (
-                                isLogin ?
-                                    <div>
-                                        Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
-                                    </div>
-                                    :
-                                    <div>
-                                        Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
-                                    </div>
-                            ) : <div>
-                                <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
-                            </div>
-                        }
 
-                        <Button
-                            variant={'outline-success'}
-                            onClick={click}
-                        >
-                            {isLogin ? 'Войти' : 'Зарегистрироваться'}
-                        </Button>
-                    </Row>
                 </Form>
+                {
+                    process.env.REACT_APP_EN_REGISTRATION && (
+                        isLogin ?
+                            <div>
+                                Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
+                            </div>
+                            :
+                            <div>
+                                Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
+                            </div>
+                    )
+                }
+                <Button
+                    // variant={'outline-success'}
+                    onClick={click}
+                    className='button-reg mt-3 pl-3 pr-3'
+                >
+                    {isLogin ? 'Войти' : 'Зарегистрироваться'}
+                </Button>
             </Card >
         </Container >
     );
