@@ -36,6 +36,8 @@
     }
 
     .bigImage {
+        max-width       : 80%;
+        max-height      : 80%;
         position        : fixed;
         top             : 50%;
         left            : 50%;
