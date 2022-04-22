@@ -8,6 +8,9 @@ function Header() {
     const history = useNavigate()
     return (
         <header className={styles.navbarContainer}>
+            <div className={styles.hamburger}>
+                <img src="./img/hamburger-menu-icon.svg" alt="" />
+            </div>
             <ul className={styles.navbarLeft}>
                 <li onClick={() => history('/')}>
                     Главная
@@ -19,6 +22,7 @@ function Header() {
                     Галерея
                 </li>
             </ul>
+
             <div className={styles.navbarCenter} >
                 <img onClick={() => history('/')} className={styles.navbarCenter} src="/img/logo.png" alt="item" />
             </div>

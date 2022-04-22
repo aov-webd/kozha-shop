@@ -5,6 +5,22 @@
     padding      : 1rem;
 }
 
+.hamburger {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    img {
+        width : 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    @media (min-width:701px) {
+        display: none;
+    }
+}
+
 .navbarLeft {
     padding       : 0;
     display       : flex;
@@ -23,6 +39,10 @@
             color: rgb(195, 0, 0);
         }
     }
+
+    @media (max-width:700px) {
+        display: none;
+    }
 }
 
 .navbarCenter {
@@ -32,6 +52,10 @@
         display: block;
         margin : auto;
         height : 70px;
+
+        @media (max-width:700px) {
+            height: 40px;
+        }
     }
 }
 
@@ -41,6 +65,9 @@
     justify-content: end;
     gap            : 1rem;
 
+    @media (max-width:700px) {
+        display: none;
+    }
 
     a,
     img {

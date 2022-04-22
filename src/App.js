@@ -38,7 +38,7 @@ const App = observer(() => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.content}>
-                {/* <Header /> */}
+                <Header />
                 <Routes>
                     <Route path="/" exact element={<Homepage />} />
                     <Route path={DEVICE_ROUTE + '/:id'} exact element={<DevicePage />} />
