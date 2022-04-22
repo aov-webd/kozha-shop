@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { observer } from 'mobx-react-lite'
 import { Context } from '../index';
 import { Pagination } from 'react-bootstrap';
-
+import styles from './Pages.module.scss';
 
 const Pages = observer(() => {
     const { device } = useContext(Context)
@@ -21,6 +21,7 @@ const Pages = observer(() => {
                         key={page}
                         active={device.page === page}
                         onClick={() => device.setPage(page)}
+                        className={styles.paginationEntry}
                     >
                         {page}
                     </Pagination.Item>

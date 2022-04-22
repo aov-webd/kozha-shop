@@ -1,41 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 .caroucel {
-    max-width   : 1440px;
-    box-sizing  : border-box;
-    overflow    : hidden;
+    width       : 100%;
     position    : relative;
     aspect-ratio: 2/1;
 
+    .caroucelEntry {
+        width     : 100%;
+        height    : 100%;
+        transition: opacity 0.5s;
+        position  : absolute;
+
+        img {
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+
+        p {
+            z-index    : 1;
+            width      : 100%;
+            font-family: 'Rubik';
+            font-weight: 500;
+            color      : #fff;
+            text-shadow: 0px 0 90px rgb(0, 0, 0),
+                0px 0 7px rgb(50, 50, 50);
+            position  : absolute;
+            top       : 60%;
+            transition: opacity 0.5s;
+            text-align: center;
+
+            @media (min-width: 800px) {
+                font-size: 2rem;
+            }
+        }
+    }
+
     .invisibleImg {
-        opacity: 0;
-    }
-
-    .caroucelImg {
-        aspect-ratio   : 2/1;
-        // filter      : saturate(50%);
-        position       : absolute;
-        top            : -50%;
-        width          : 100%;
-        height         : 200%;
-        transition     : all 0.5s;
-    }
-
-    .caroucelText {
-        z-index    : 1;
-        width      : 100%;
-        font-family: 'Rubik';
-        font-size  : clamp(0rem, 3vw, 3rem);
-        font-weight: 500;
-        color      : #fff;
-        text-shadow: 0px 0 90px rgb(0, 0, 0), 0px 0 7px rgb(50, 50, 50);
-        position   : absolute;
-        top        : 60%;
-        transition : all 0.5s;
-        text-align : center;
-    }
-
-    .invisibleText {
         opacity: 0;
     }
 }

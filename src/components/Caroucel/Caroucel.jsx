@@ -31,7 +31,6 @@ function Caroucel() {
     let decActiveIndex = () => { setActiveIndex(activeIndex === 0 ? 7 : activeIndex - 1) }
 
     useEffect(() => {
-        console.log('useeffect setinterval')
         let interval = setInterval(() => {
             incActiveIndex();
         }, 10000);
@@ -40,57 +39,47 @@ function Caroucel() {
 
     return (
         <div
+            className={styles.caroucel}
             onMouseEnter={() => setShowCaroucelNavigation(true)}
-            onMouseLeave={() => setShowCaroucelNavigation(false)}
-        >
-            <section className={styles.caroucel}>
+            onMouseLeave={() => setShowCaroucelNavigation(false)}>
+            {caroucelItems.map((item, index) => (
+                <div className={styles.caroucelEntry + ' ' + (index === activeIndex ? '' : styles.invisibleImg)} key={index}>
+                    <img src={item} alt={index} />
+                    <p>{itemText[index]}</p>
+                </div>
+            ))}
+            <div
+                className={(showCaroucelNavigation ? styles.showCaroucelNavigation : '') + ' ' + styles.dots}>
                 {caroucelItems.map((item, index) => (
-                    <div key={index}>
-                        <img
-                            className={
-                                styles.caroucelImg + ' ' +
-                                (index === activeIndex ? '' : styles.invisibleImg)}
-                            src={item} alt={index} />
-                        <div
-                            className={
-                                styles.caroucelText + ' ' +
-                                (index === activeIndex ? '' : styles.invisibleText)}>{itemText[index]}
-                        </div>
-                    </div>
+                    <div
+                        key={index}
+                        onClick={() => setActiveIndex(index)}
+                        className={index === activeIndex ? styles.activeDot : styles.inActiveDot}></div>
                 ))}
-                <div
-                    className={(showCaroucelNavigation ? styles.showCaroucelNavigation : '') + ' ' + styles.dots}>
-                    {caroucelItems.map((item, index) => (
-                        <div
-                            key={index}
-                            onClick={() => setActiveIndex(index)}
-                            className={index === activeIndex ? styles.activeDot : styles.inActiveDot}></div>
-                    ))}
-                </div>
-                <div
-                    className={
-                        styles.caroucelArrowsContainer + ' ' +
-                        (showCaroucelNavigation ? styles.showCaroucelNavigation : '')
-                    }
-                >
-                    <img
-                        onClick={decActiveIndex}
-                        className={styles.caroucelArrow + ' ' + styles.arrowLeft}
-                        src="./img/arrow-right.svg" alt="arrow" />
-                </div>
-                <div
-                    className={
-                        (showCaroucelNavigation ? styles.showCaroucelNavigation : '') + ' ' +
-                        styles.caroucelArrowsContainerRight + ' ' +
-                        styles.caroucelArrowsContainer
-                    }
-                >
-                    <img
-                        onClick={incActiveIndex}
-                        className={styles.caroucelArrow + ' ' + styles.arrowRight}
-                        src="./img/arrow-right.svg" alt="arrow" />
-                </div>
-            </section>
+            </div>
+            <div
+                className={
+                    styles.caroucelArrowsContainer + ' ' +
+                    (showCaroucelNavigation ? styles.showCaroucelNavigation : '')
+                }
+            >
+                <img
+                    onClick={decActiveIndex}
+                    className={styles.caroucelArrow + ' ' + styles.arrowLeft}
+                    src="./img/arrow-right.svg" alt="arrow" />
+            </div>
+            <div
+                className={
+                    (showCaroucelNavigation ? styles.showCaroucelNavigation : '') + ' ' +
+                    styles.caroucelArrowsContainerRight + ' ' +
+                    styles.caroucelArrowsContainer
+                }
+            >
+                <img
+                    onClick={incActiveIndex}
+                    className={styles.caroucelArrow + ' ' + styles.arrowRight}
+                    src="./img/arrow-right.svg" alt="arrow" />
+            </div>
         </div>
     )
 }

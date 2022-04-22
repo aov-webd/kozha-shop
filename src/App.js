@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Landing from "./pages/Landing/Landing";
+import Homepage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer"
 import Gallery from "./pages/Gallery/Gallery"
 import Auth from "./pages/Auth/Auth"
@@ -37,20 +37,22 @@ const App = observer(() => {
 
     return (
         <div className={styles.wrapper}>
-            <Header />
-            <Routes>
-                <Route path="/" exact element={<Landing />} />
-                <Route path={DEVICE_ROUTE + '/:id'} exact element={<DevicePage />} />
-                <Route path="/gallery" exact element={<Gallery />} />
-                <Route path="/catalogue" exact element={<Catalogue />} />
-                <Route path="/login" exact element={<Auth />} />
-                {
-                    process.env.REACT_APP_EN_REGISTRATION && (
-                        <Route path="/registration" exact element={<Auth />} />)
-                }
-                {user.isAuth === true && <Route path={ADMIN_ROUTE} exact element={<Admin />} />}
-            </Routes>
-            <Footer />
+            <div className={styles.content}>
+                {/* <Header /> */}
+                <Routes>
+                    <Route path="/" exact element={<Homepage />} />
+                    <Route path={DEVICE_ROUTE + '/:id'} exact element={<DevicePage />} />
+                    <Route path="/gallery" exact element={<Gallery />} />
+                    <Route path="/catalogue" exact element={<Catalogue />} />
+                    <Route path="/login" exact element={<Auth />} />
+                    {
+                        process.env.REACT_APP_EN_REGISTRATION && (
+                            <Route path="/registration" exact element={<Auth />} />)
+                    }
+                    {user.isAuth === true && <Route path={ADMIN_ROUTE} exact element={<Admin />} />}
+                </Routes>
+                <Footer />
+            </div>
         </div>
     );
 })
