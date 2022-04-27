@@ -1,5 +1,8 @@
-.navbarContainer {
-    position     : relative;
+.navContainer {
+    z-index      : 2;
+    position     : sticky;
+    top          : 0;
+    width        : 100%;
     display      : flex;
     background   : #fff;
     border-bottom: solid 1px rgb(134, 134, 134);
@@ -60,7 +63,7 @@
     }
 }
 
-.navbarLeft {
+.navRoutes {
     padding       : 0;
     display       : flex;
     flex          : 1;
@@ -84,7 +87,7 @@
     }
 }
 
-.navbarCenter {
+.navLogo {
     flex   : 1;
     z-index: 3;
 
@@ -106,7 +109,7 @@
     }
 }
 
-.navbarRight {
+.navSocials {
     flex           : 1;
     display        : flex;
     justify-content: end;
