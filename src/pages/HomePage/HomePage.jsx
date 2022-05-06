@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './HomePage.module.scss';
 import Caroucel from "../../components/Caroucel/Caroucel";
+import { useSelector, useDispatch } from 'react-redux';
+import { actions } from '../../redux/store';
+
 function Homepage() {
+    const counter = useSelector((state) => state.counter)
+    const dispatch = useDispatch()
+    const inc = () => dispatch(actions.increment())
+    const dec = () => dispatch(actions.decrement())
     return (
         <div className={styles.wrapper}>
             <Caroucel />

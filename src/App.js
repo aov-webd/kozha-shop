@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Homepage from "./pages/HomePage/HomePage";
@@ -9,31 +9,12 @@ import Catalogue from "./pages/Catalogue";
 import Admin from "./pages/Admin";
 import { Context } from './index'
 import { observer } from "mobx-react-lite";
-import { Spinner } from "react-bootstrap";
-import { check } from "./http/userAPI";
 import { ADMIN_ROUTE, DEVICE_ROUTE } from "./utils/consts";
 import DevicePage from "./pages/DevicePage/DevicePage";
 import styles from './App.module.scss';
 
 const App = observer(() => {
     const { user } = useContext(Context)
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        check()
-            .then(data => {
-                user.setUser(true)
-                user.setIsAuth(true)
-            })
-            .catch(e =>
-                console.log(e.message)
-            )
-            .finally(() => setLoading(false))
-    }, [])
-
-    if (loading) {
-        return <Spinner animation={"grow"} />
-    }
 
     return (
         <div className={styles.wrapper}>

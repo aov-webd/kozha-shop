@@ -1,5 +1,5 @@
 .navContainer {
-    z-index      : 2;
+    z-index      : 3;
     position     : sticky;
     top          : 0;
     width        : 100%;
@@ -27,18 +27,19 @@
 }
 
 .mobileNav {
-    padding         : 50px 0 0 1rem;
+    padding         : 57px 0 0 1rem;
     z-index         : 2;
     position        : fixed;
     top             : 0;
     left            : 0;
-    height          : 100vh;
+    height          : 0;
     width           : 100vw;
     background-color: #fff;
     display         : flex;
     flex-direction  : column;
     overflow        : overlay;
     gap             : 1rem;
+    transition      : height 0.3s ease-in-out;
 
     a img,
     img {
@@ -63,12 +64,20 @@
     }
 }
 
+.mobileNavVisible {
+    height: 100vh;
+}
+
 .navRoutes {
     padding       : 0;
     display       : flex;
     flex          : 1;
     text-transform: uppercase;
     gap           : 1rem;
+
+    @media (max-width:700px) {
+        flex-direction: column;
+    }
 
     li {
         color      : #000;
@@ -80,10 +89,6 @@
         &:hover {
             color: rgb(195, 0, 0);
         }
-    }
-
-    @media (max-width:700px) {
-        display: none;
     }
 }
 
@@ -116,7 +121,7 @@
     gap            : 1rem;
 
     @media (max-width:700px) {
-        display: none;
+        flex-direction: column;
     }
 
     a,
