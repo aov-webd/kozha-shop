@@ -55,7 +55,7 @@ const Auth = observer(() => {
 
                 </Form>
                 {
-                    process.env.REACT_APP_EN_REGISTRATION && (
+                    process.env.REACT_APP_EN_REGISTRATION === 'true' && (
                         isLogin ?
                             <div>
                                 Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
