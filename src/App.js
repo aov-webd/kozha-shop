@@ -5,7 +5,7 @@ import Homepage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer"
 import Gallery from "./pages/Gallery/Gallery"
 import Auth from "./pages/Auth/Auth"
-import Catalogue from "./pages/Catalogue";
+import Catalogue from "./pages/Catalogue/Catalogue";
 import Admin from "./pages/Admin";
 import { Context } from './index'
 import { observer } from "mobx-react-lite";

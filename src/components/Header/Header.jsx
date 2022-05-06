@@ -63,7 +63,7 @@ function Header() {
                 </div>
                 {!mobileMode && navRoutes}
                 <div className={styles.navLogo} >
-                    <img onClick={() => history('/')} className={styles.navbarCenter} src="/img/logo.png" alt="item" />
+                    <img onClick={() => { history('/'); setMobileNavVisible(false) }} className={styles.navbarCenter} src="/img/logo.png" alt="item" />
                 </div>
                 {!mobileMode && navSocials}
             </header>

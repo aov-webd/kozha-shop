@@ -6,7 +6,12 @@ function Caroucel() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [showCaroucelNavigation, setShowCaroucelNavigation] = useState(false)
 
-    useEffect(() => setTimeout(incActiveIndex, 10000), [activeIndex])
+    useEffect(() => {
+        let toId = setTimeout(incActiveIndex, 10000);
+        return () => {
+            clearInterval(toId)
+        }
+    }, [activeIndex])
 
     let incActiveIndex = () => setActiveIndex(activeIndex === 7 ? 0 : activeIndex + 1);
     let decActiveIndex = () => setActiveIndex(activeIndex === 0 ? 7 : activeIndex - 1)

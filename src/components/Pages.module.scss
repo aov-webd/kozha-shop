@@ -1,7 +1,12 @@
 .paginationEntry {
-    span {
-        :focus {
-            color: #5a5a5a;
-        }
+    cursor: pointer;
+    margin: 1rem;
+
+    :focus {
+        color: #5a5a5a;
     }
+}
+
+.wrapper {
+    display: flex;
 }

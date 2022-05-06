@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { observer } from 'mobx-react-lite'
 import { Context } from '../index';
-import { Pagination } from 'react-bootstrap';
 import styles from './Pages.module.scss';
 
 const Pages = observer(() => {
@@ -14,19 +13,17 @@ const Pages = observer(() => {
     }
 
     return (
-        <div>
-            <Pagination className='mt-3'>
-                {(pages.length > 1) && pages.map(page =>
-                    <Pagination.Item
-                        key={page}
-                        active={device.page === page}
-                        onClick={() => device.setPage(page)}
-                        className={styles.paginationEntry}
-                    >
-                        {page}
-                    </Pagination.Item>
-                )}
-            </Pagination>
+        <div className={styles.wrapper}>
+            {(pages.length > 1) && pages.map(page =>
+                <p
+                    key={page}
+                    active={device.page === page}
+                    onClick={() => device.setPage(page)}
+                    className={styles.paginationEntry}
+                >
+                    {page}
+                </p>
+            )}
         </div>
     );
 });
