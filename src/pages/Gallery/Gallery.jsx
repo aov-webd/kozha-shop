@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Gallery.module.scss';
 
 function Gallery() {
@@ -14,13 +14,7 @@ function Gallery() {
     let [imageToShow, setimageToShow] = useState(``)
 
     return (
-        <div
-            style={{
-                maxWidth: '1440px',
-                margin: '0 auto',
-                flex: '1 1 auto'
-            }}
-            className='content gallery'>
+        <div className={styles.wrapper}>
             <div
                 className={styles.bigImageContainer + (imageOverlay === true ? (' ' + styles.visible) : '')}
             >
