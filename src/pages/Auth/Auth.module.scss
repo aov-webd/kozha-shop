@@ -1,7 +1,9 @@
-.content {
-    flex: 1 1 auto;
-}
+.wrapper {
+    margin        : auto;
+    flex-direction: column;
+    display       : flex;
 
-.button-reg {
-    box-sizing: border-box;
+    * {
+        margin: 1rem;
+    }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, Container, Button, AccordionButton, Image, Row, ListGroup } from 'react-bootstrap';
+import { Accordion, Container, Button, Image, ListGroup } from 'react-bootstrap';
 import CreateType from '../components/modals/CreateType';
 import CreateDevice from '../components/modals/CreateDevice';
 import { useContext, useEffect } from 'react';

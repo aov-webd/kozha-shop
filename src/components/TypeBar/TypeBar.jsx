@@ -10,10 +10,7 @@ const TypeBar = observer(() => {
         <ul>
             {device?.types?.map(type =>
                 <li
-                    className={styles.item}
-                    action variant="light"
-                    style={{ cursor: 'pointer' }}
-                    active={type.id === device.selectedType.id}
+                    className={styles.item + (type.id === device.selectedType.id ? (' ' + styles.active) : '')}
                     onClick={() => device.setSelectedType(type)}
                     key={type.id}
                 >

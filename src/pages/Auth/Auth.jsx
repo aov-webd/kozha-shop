@@ -16,65 +16,55 @@ const Auth = observer(() => {
     const isLogin = location.pathname === LOGIN_ROUTE
 
     const click = async () => {
-        try {
-            let data;
-            if (isLogin) {
-                data = await login(email, password)
-            } else {
-                data = await registration(email, password)
-                console.log('registration')
+        let data;
+        if (isLogin) {
+            data = await login(email, password)
+            if (data) {
+                user.setUser(data)
+                user.setIsAuth(true)
             }
-            user.setUser(data)
-            user.setIsAuth(true)
-            history(SHOP_ROUTE)
-        } catch (error) {
-            alert(error.response.data.message)
+        } else {
+            data = await registration(email, password)
         }
+        history(SHOP_ROUTE)
     }
 
     return (
-        <Container
-            className={`${styles.content} content d-flex justify-content-center align-items-center`}
-        >
-            <Card style={{ width: 600 }} className='p-3'>
-                <h2 className='m-auto'>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
-                <Form>
-                    <Form.Control
-                        className='mt-3'
-                        placeholder='Введите имя пользователья или e-mail'
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                    <Form.Control
-                        className='mt-3 mb-3'
-                        placeholder='Введите пароль'
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        type='password'
-                    />
+        <div className={styles.wrapper}>
+            <h2 className='m-auto'>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
+            <input
+                className='mt-3'
+                placeholder='Введите имя пользователья или e-mail'
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+            />
+            <input
+                className='mt-3 mb-3'
+                placeholder='Введите пароль'
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type='password'
+            />
 
-                </Form>
-                {
-                    process.env.REACT_APP_EN_REGISTRATION === 'true' && (
-                        isLogin ?
-                            <div>
-                                Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
-                            </div>
-                            :
-                            <div>
-                                Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
-                            </div>
-                    )
-                }
-                <Button
-                    // variant={'outline-success'}
-                    onClick={click}
-                    className='button-reg mt-3 pl-3 pr-3'
-                >
-                    {isLogin ? 'Войти' : 'Зарегистрироваться'}
-                </Button>
-            </Card >
-        </Container >
+            {
+                process.env.REACT_APP_EN_REGISTRATION === 'true' && (
+                    isLogin ?
+                        <div>
+                            Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
+                        </div>
+                        :
+                        <div>
+                            Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
+                        </div>
+                )
+            }
+            <button
+                onClick={click}
+                className='button-reg mt-3 pl-3 pr-3'
+            >
+                {isLogin ? 'Войти' : 'Зарегистрироваться'}
+            </button>
+        </div >
     );
 });
 

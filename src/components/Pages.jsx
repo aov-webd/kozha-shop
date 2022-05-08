@@ -17,9 +17,8 @@ const Pages = observer(() => {
             {(pages.length > 1) && pages.map(page =>
                 <p
                     key={page}
-                    active={device.page === page}
                     onClick={() => device.setPage(page)}
-                    className={styles.paginationEntry}
+                    className={styles.paginationEntry + (device.page === page ? (' ' + styles.paginationActive) : '')}
                 >
                     {page}
                 </p>

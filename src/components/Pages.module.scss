@@ -1,11 +1,17 @@
-.paginationEntry {
-    cursor: pointer;
-    margin: 1rem;
-
-    :focus {
-        color: #5a5a5a;
-    }
+ul {
+    margin: 0;
 }
+
+.paginationEntry {
+    cursor : pointer;
+    padding: 0.5rem;
+}
+
+.paginationActive {
+    border-radius   : 3px;
+    background-color: rgb(230, 230, 230);
+}
+
 
 .wrapper {
     display: flex;

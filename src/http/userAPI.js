@@ -14,6 +14,7 @@ export const login = async (email, password) => {
         return jwt_decode(data.token)
     } catch (e) {
         console.log(e)
+        return false
     }
 }
 
