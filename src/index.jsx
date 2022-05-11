@@ -2,7 +2,6 @@ import "./index.scss"
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import UserStore from "./store/UserStore"
 import DeviceStore from "./store/DeviceStore"
@@ -24,7 +23,7 @@ ReactDOM.render(
                     <App />
                 </Context.Provider>
             </Provider>
-        </Router>
+        </Router>,
     </React.StrictMode>,
     document.getElementById("root")
 );

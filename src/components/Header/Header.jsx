@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from './Header.module.scss';
 import { Context } from '../../index';
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useWindowSize from '../../hooks/userWindowSize.ts'
 
 function Header() {

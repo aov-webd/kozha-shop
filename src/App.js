@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
+import Header from "./components/Header/Header.jsx";
 import Homepage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer"
 import Gallery from "./pages/Gallery/Gallery"
