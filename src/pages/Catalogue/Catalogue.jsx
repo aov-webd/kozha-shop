@@ -12,7 +12,7 @@ const Catalogue = observer(() => {
 
     useEffect(() => {
         fetchTypes()
-            .then(data => device.setTypes(data)).catch(err => console.log(err))
+            .then(data => device.setTypes(data))
             .catch(err => console.log(err))
 
         fetchDevices({ limit: 8, page: device.page })
